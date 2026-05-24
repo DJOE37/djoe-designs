@@ -85,6 +85,8 @@ export default function Hero() {
                 key={`t1-slow-${i}`}
                 src={img}
                 alt=""
+                loading="eager"
+                decoding="async"
                 className="
                   flex-shrink-0
                   h-64 sm:h-80 md:h-96
@@ -104,6 +106,8 @@ export default function Hero() {
                 key={`t2-slow-${i}`}
                 src={img}
                 alt=""
+                loading="eager"
+                decoding="async"
                 className="
                   flex-shrink-0
                   h-64 sm:h-80 md:h-96
@@ -127,6 +131,8 @@ export default function Hero() {
                 key={`t1-fast-${i}`}
                 src={img}
                 alt=""
+                loading="eager"
+                decoding="async"
                 className="
                   flex-shrink-0
                   h-56 sm:h-72 md:h-80
@@ -146,6 +152,8 @@ export default function Hero() {
                 key={`t2-fast-${i}`}
                 src={img}
                 alt=""
+                loading="eager"
+                decoding="async"
                 className="
                   flex-shrink-0
                   h-56 sm:h-72 md:h-80
@@ -195,11 +203,9 @@ export default function Hero() {
 
           <motion.p
             variants={itemVariants}
-            className="text-gray-400 text-base leading-relaxed mb-10 max-w-xl"
+            className="text-gray-300 text-base leading-relaxed mb-10 max-w-xl"
           >
-            Integrated structural engineering, architectural intent, and BOQ intelligence
-            focused on one outcome — buildable, cost-aware, and execution-ready projects
-            that translate cleanly from concept to site.
+            Coordinating structural calculations, architectural detailing, and cost takeoffs under a single practice. Focusing on buildability and cost-control ensures that designs translate cleanly to site execution without variations.
           </motion.p>
 
           <motion.div
@@ -267,10 +273,8 @@ export default function Hero() {
 
               <div className="h-px bg-white/10" />
 
-              <p className="text-sm text-gray-400 leading-relaxed">
-                A unified approach where structural systems define stability,
-                architectural decisions shape usability, and cost intelligence
-                ensures every design remains buildable in real-world conditions.
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Coordinated design where structural grids define stability, architectural layouts shape spatial flow, and material takeoffs verify budget parameters, ensuring buildability in real-world conditions.
               </p>
 
             </div>

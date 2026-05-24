@@ -67,7 +67,7 @@ export default function ServicesSection() {
             Real Construction Outcomes
           </h2>
 
-          <p className="text-gray-400 leading-relaxed">
+          <p className="text-gray-300 leading-relaxed">
             Structural systems, architectural intent, and BOQ intelligence integrated into a single execution-focused engineering framework.
           </p>
 

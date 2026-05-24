@@ -113,7 +113,7 @@ export default function Process() {
             Engineering & Execution
           </h2>
 
-          <p className="text-gray-400 leading-relaxed">
+          <p className="text-gray-300 leading-relaxed">
             Every project follows a disciplined engineering process focused on
             clarity, technical accuracy, and real-world construction outcomes.
           </p>
@@ -176,7 +176,7 @@ export default function Process() {
                 </h3>
 
                 {/* DESCRIPTION */}
-                <p className="text-xs lg:text-sm text-gray-400 leading-relaxed">
+                <p className="text-xs lg:text-sm text-gray-300 leading-relaxed">
                   {step.description}
                 </p>
 

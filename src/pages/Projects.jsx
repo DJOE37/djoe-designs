@@ -71,8 +71,8 @@ export default function Projects() {
               Engineering Catalog
             </h1>
 
-            <p className="text-gray-400 leading-relaxed">
-              Explore our project records filtered by structural classification. Select a project to review detailed specifications and engineering methodologies.
+            <p className="text-gray-300 leading-relaxed">
+              Project records filtered by structural classification. Select a project to inspect specific construction detailing and quantity takeoffs.
             </p>
           </motion.div>
 

@@ -47,25 +47,25 @@ const pipelinePhases = [
     num: "01",
     phase: "Feasibility & Soil Coordination",
     title: "Geotechnical Sizing",
-    desc: "We examine the soil report and borehole data before specifying the foundations. Matching the foundation footings directly to the soil’s bearing capacity prevents differential settlement, which is the main cause of cracked walls and leaning structures."
+    desc: "Soil reports and borehole logs are analyzed before foundation parameters are specified. Matching structural footings directly to soil bearing profiles prevents differential settlement, mitigating foundation cracking and structural lean."
   },
   {
     num: "02",
     phase: "Finite Element Modeling",
     title: "Load Pathway Modeling",
-    desc: "We map how gravity, live loads, and wind forces travel through the building. Calculating the stresses on every column and transfer slab allows us to size reinforcing steel exactly where tension demands it, avoiding weak points."
+    desc: "Gravity, wind, and live load distribution pathways are mapped through the framing system. Quantifying stress distributions across columns and transfer slabs allows reinforcement steel to be positioned precisely in active tension zones, eliminating weak failure paths."
   },
   {
     num: "03",
     phase: "Value Engineering Takeoffs",
     title: "Material Takeoffs",
-    desc: "We calculate concrete volumes and steel weight totals in parallel with structural sizing. By modeling quantity data early, we can adjust member sizes to fit your budget before the design is submitted for municipal approvals."
+    desc: "Concrete volumes and reinforcement steel weights are calculated in tandem with structural sizing. Extracting quantity schedules early allows member thickness adjustments to align with budget parameters prior to building control submission."
   },
   {
     num: "04",
     phase: "Constructability Audit",
     title: "Site Auditing",
-    desc: "We inspect the formwork and reinforcement steel on site before the contractor pours concrete. This step ensures that the steel sizes, bar spacing, and cover depths match the structural calculation drawings."
+    desc: "Formwork and reinforcement steel layouts are inspected on site prior to concrete placement. Pre-pour verification guarantees that bar diameters, center-to-center spacing, and concrete cover offsets match approved design drawings."
   }
 ];
 
@@ -75,19 +75,19 @@ const pipelinePhases = [
 const faqs = [
   {
     q: "How does your practice integrate structural sizing with value engineering?",
-    a: "Rather than using generic sizing templates that default to oversized sections and excessive steel rebar—a common practice to save engineering hours—we calculate load distributions for each individual column and beam. We write precise bar bending schedules (BBS) that match steel diameters to actual tension and shear stress diagrams. This detailed modeling usually reduces overall reinforcement weight by 10% to 15% without reducing structural safety, saving money on concrete and steel."
+    a: "Instead of relying on generic sizing templates that default to oversized sections and excessive reinforcement—a practice that inflates material costs—load distributions are calculated for each column and beam. Precise bar bending schedules (BBS) are detailed to match steel diameters to actual tension and shear stress diagrams. This precise modeling routinely reduces reinforcement weight by 10% to 15% without compromising safety margins."
   },
   {
     q: "When should we coordinate architectural drafts with concrete detailing?",
-    a: "This must happen before the schematic architectural plans are finalized. Sizing structural grids and column layout lines alongside the floor plan prevents columns from landing in the middle of living rooms or requiring expensive, deep concrete transfer beams. By aligning structural columns with architectural walls early, we keep room heights high and avoid structural redesigns that delay building control approvals."
+    a: "This coordination must happen before schematic architectural plans are finalized. Mapping structural grids in tandem with floor plans prevents load pathways from clashing with spatial circulation or requiring deep, expensive concrete transfer beams. Aligning structural lines with architectural partitions maintains clear ceiling heights and prevents redesign loops that delay building control approvals."
   },
   {
     q: "What standard measurement codes do you comply with for Bills of Quantities (BOQ)?",
-    a: "We prepare all material takeoffs under standard measurement frameworks, primarily SMM7 (Standard Method of Measurement for Building Works) or CESMM (Civil Engineering Standard Method of Measurement). This means every item—from foundation excavation to paint finish—is quantified using standard rules. It prevents contractors from inflating prices through vague definitions or claiming extra money for items that are legally included in standard trade descriptions."
+    a: "All material takeoffs are prepared in compliance with standard measurement frameworks, primarily SMM7 (Standard Method of Measurement) or CESMM (Civil Engineering Standard Method of Measurement). Quantifying every element according to standardized rules prevents contractor price inflation and protects developers from variation claims during construction."
   },
   {
     q: "Why do site inspections before concrete casting protect the developer's liability?",
-    a: "Once concrete is poured into formwork, verifying the internal steel rebar is impossible without expensive non-destructive testing or core drilling. Checking the reinforcement steel layout—specifically the bar diameters, spacing, overlap lap lengths, and cover blocks—directly in the formwork before casting ensures the structure matches the approved design. This pre-pour audit creates a clear legal record of compliance and protects developers from liability if structural cracking occurs later."
+    a: "Once concrete is cast, verifying internal steel is impossible without destructive coring. Formwork audits—inspecting bar diameters, center-to-center spacing, overlap lap lengths, and spacer block offsets before casting—confirm compliance with calculations. This pre-pour verification provides a clean quality record and protects developers against structural disputes."
   }
 ];
 
@@ -158,9 +158,9 @@ export default function ServicesPage() {
               
               <motion.p
                 variants={itemVariants}
-                className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl"
+                className="text-gray-300 text-base md:text-lg leading-relaxed max-w-2xl"
               >
-                Most structural failures and cost overruns do not originate on site; they start during the design phase when structural layouts, spatial designs, and material bills are created in isolation. We coordinate these disciplines from day one, matching foundation engineering to actual soil reports and cross-checking drawings against realistic material budgets to ensure projects are buildable and cost-predictable before the first shovel hits the dirt.
+                Most structural failures and cost overruns do not originate on site; they start during the design phase when structural layouts, spatial designs, and material bills are created in isolation. Coordinating these disciplines from day one, matching foundation engineering to actual soil reports and cross-checking drawings against realistic material budgets, keeps projects buildable and cost-predictable before site mobilization.
               </motion.p>
             </div>
 
@@ -219,8 +219,8 @@ export default function ServicesPage() {
                       ${isActive 
                         ? "border-blue-500/30 bg-blue-500/[0.04] text-white" 
                         : isDefaultActiveDesktop
-                          ? "border-white/10 bg-white/[0.01] hover:border-white/20 text-gray-400 hover:text-white lg:border-blue-500/30 lg:bg-blue-500/[0.04] lg:text-white"
-                          : "border-white/10 bg-white/[0.01] hover:border-white/20 text-gray-400 hover:text-white"
+                          ? "border-white/10 bg-white/[0.01] hover:border-white/20 text-gray-300 hover:text-white lg:border-blue-500/30 lg:bg-blue-500/[0.04] lg:text-white"
+                          : "border-white/10 bg-white/[0.01] hover:border-white/20 text-gray-300 hover:text-white"
                       }
                     `}
                   >
@@ -274,13 +274,13 @@ export default function ServicesPage() {
 
                             {/* Description & Relevance */}
                             <div className="space-y-4">
-                              <p className="text-sm text-gray-400 leading-relaxed">
+                              <p className="text-sm text-gray-300 leading-relaxed">
                                 {item.desc}
                               </p>
                               
                               <div className="bg-white/[0.01] border border-white/5 p-5 rounded-xl">
                                 <h5 className="text-xs font-medium text-white mb-2 tracking-wide uppercase">Site Execution Value</h5>
-                                <p className="text-xs text-gray-400 leading-relaxed">
+                                <p className="text-xs text-gray-300 leading-relaxed">
                                   {item.relevance}
                                 </p>
                               </div>
@@ -291,7 +291,7 @@ export default function ServicesPage() {
                               <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Technical Capability Areas</h5>
                               <div className="grid sm:grid-cols-2 gap-3">
                                 {item.capabilities.map((cap, i) => (
-                                  <div key={i} className="flex gap-2 items-center text-xs text-gray-400">
+                                  <div key={i} className="flex gap-2 items-center text-xs text-gray-300">
                                     <span className="w-1.5 h-1.5 rounded-full bg-blue-500/60" />
                                     <span>{cap}</span>
                                   </div>
@@ -304,7 +304,7 @@ export default function ServicesPage() {
                               <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Service Deliverables</h5>
                               <div className="grid sm:grid-cols-2 gap-3">
                                 {item.deliverables.map((del, i) => (
-                                  <div key={i} className="flex gap-2 items-start text-xs text-gray-400">
+                                  <div key={i} className="flex gap-2 items-start text-xs text-gray-300">
                                     <span className="text-blue-400 font-mono text-[10px] mt-0.5">✓</span>
                                     <span>{del}</span>
                                   </div>
@@ -315,7 +315,7 @@ export default function ServicesPage() {
                             {/* Workflow Process */}
                             <div className="border-t border-white/10 pt-8 space-y-2">
                               <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Integrated Process Flow</h5>
-                              <p className="text-xs text-gray-400 leading-relaxed">
+                              <p className="text-xs text-gray-300 leading-relaxed">
                                 {item.workflow}
                               </p>
                             </div>
@@ -366,13 +366,13 @@ export default function ServicesPage() {
 
                     {/* Description & Relevance */}
                     <div className="space-y-4">
-                      <p className="text-sm text-gray-400 leading-relaxed">
+                      <p className="text-sm text-gray-300 leading-relaxed">
                         {activeService.desc}
                       </p>
                       
                       <div className="bg-white/[0.01] border border-white/5 p-5 rounded-xl">
                         <h5 className="text-xs font-medium text-white mb-2 tracking-wide uppercase">Site Execution Value</h5>
-                        <p className="text-xs text-gray-400 leading-relaxed">
+                        <p className="text-xs text-gray-300 leading-relaxed">
                           {activeService.relevance}
                         </p>
                       </div>
@@ -383,7 +383,7 @@ export default function ServicesPage() {
                       <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Technical Capability Areas</h5>
                       <div className="grid sm:grid-cols-2 gap-3">
                         {activeService.capabilities.map((cap, i) => (
-                          <div key={i} className="flex gap-2 items-center text-xs text-gray-400">
+                          <div key={i} className="flex gap-2 items-center text-xs text-gray-300">
                             <span className="w-1.5 h-1.5 rounded-full bg-blue-500/60" />
                             <span>{cap}</span>
                           </div>
@@ -396,7 +396,7 @@ export default function ServicesPage() {
                       <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Service Deliverables</h5>
                       <div className="grid sm:grid-cols-2 gap-3">
                         {activeService.deliverables.map((del, i) => (
-                          <div key={i} className="flex gap-2 items-start text-xs text-gray-400">
+                          <div key={i} className="flex gap-2 items-start text-xs text-gray-300">
                             <span className="text-blue-400 font-mono text-[10px] mt-0.5">✓</span>
                             <span>{del}</span>
                           </div>
@@ -409,7 +409,7 @@ export default function ServicesPage() {
                   {/* Workflow Process */}
                   <div className="border-t border-white/10 pt-8 mt-8 space-y-2">
                     <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Integrated Process Flow</h5>
-                    <p className="text-xs text-gray-400 leading-relaxed">
+                    <p className="text-xs text-gray-300 leading-relaxed">
                       {activeService.workflow}
                     </p>
                   </div>
@@ -432,8 +432,8 @@ export default function ServicesPage() {
             <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-6">
               Design-to-Construction Pipeline
             </h2>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              We review design documents through a clear structural and financial sequence. This process ensures that structural steel plans, spatial drawings, and material budgets are fully aligned before the contractor arrives on site.
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Design document audits follow a rigorous structural and financial sequence, aligning steel framing plans, spatial layouts, and quantity budgets before contractor mobilization.
             </p>
           </div>
 
@@ -488,7 +488,7 @@ export default function ServicesPage() {
                   <h3 className="text-base font-medium text-white mb-4">
                     {phase.title}
                   </h3>
-                  <p className="text-xs text-gray-400 leading-relaxed">
+                  <p className="text-xs text-gray-300 leading-relaxed">
                     {phase.desc}
                   </p>
 
@@ -520,28 +520,28 @@ export default function ServicesPage() {
               <h2 className="text-2xl sm:text-3xl font-semibold text-white leading-tight">
                 The Cost of Uncoordinated Design
               </h2>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-300 leading-relaxed">
                 Many construction projects experience a structural gap. Architects draft layouts without evaluating how load framing affects the spaces, while engineers size steel and concrete using broad, oversized margins to save analysis time. This lack of initial coordination leads to expensive structural redesigns, delayed approvals, and contractor variation claims on site.
               </p>
-              <p className="text-sm text-gray-400 leading-relaxed">
-                When you coordinate architectural planning, structural detailing, and quantity takeoffs under a single workflow, these gaps disappear. We verify load capacities, structural spans, and material takeoffs together, ensuring that your drawings translate cleanly to the site without budget surprises.
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Coordinating architectural planning, structural calculations, and quantity takeoffs under a unified workflow bridges these execution gaps. Verifying structural spans and material schedules in tandem ensures that drawings translate cleanly to site execution without budget inflation.
               </p>
             </div>
 
             <div className="lg:col-span-2 border-l border-white/10 pl-8 lg:pl-12 py-2 space-y-6">
               <div>
                 <h4 className="text-sm font-semibold text-white mb-2">01/ Spatially Integrated Structural Grids</h4>
-                <p className="text-xs text-gray-400 leading-relaxed">Columns align with partition lines so room spans require no exposed structural beams.</p>
+                <p className="text-xs text-gray-300 leading-relaxed">Columns align with partition lines so room spans require no exposed structural beams.</p>
               </div>
 
               <div>
                 <h4 className="text-sm font-semibold text-white mb-2">02/ Code-Optimized Steel Detailing</h4>
-                <p className="text-xs text-gray-400 leading-relaxed">Reinforcing schedules match concrete stresses exactly, eliminating steel waste on site.</p>
+                <p className="text-xs text-gray-300 leading-relaxed">Reinforcing schedules match concrete stresses exactly, eliminating steel waste on site.</p>
               </div>
 
               <div>
                 <h4 className="text-sm font-semibold text-white mb-2">03/ Audited Bills of Quantities</h4>
-                <p className="text-xs text-gray-400 leading-relaxed">Detailed concrete and steel takeoffs verify that tender bids reflect actual drawing dimensions.</p>
+                <p className="text-xs text-gray-300 leading-relaxed">Detailed concrete and steel takeoffs verify that tender bids reflect actual drawing dimensions.</p>
               </div>
             </div>
 
@@ -591,7 +591,7 @@ export default function ServicesPage() {
                       transition={{ duration: 0.25 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 pt-2 border-t border-white/5 text-xs sm:text-sm text-gray-400 leading-relaxed">
+                      <div className="px-6 pb-6 pt-2 border-t border-white/5 text-xs sm:text-sm text-gray-300 leading-relaxed">
                         {faq.a}
                       </div>
                     </motion.div>
@@ -614,8 +614,8 @@ export default function ServicesPage() {
             Ready to Coordinate Your Build?
           </h2>
           
-          <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
-            Coordinate your project's structural details, spatial plans, and quantity takeoffs under a single practice. By resolving design conflicts early, we help you control material costs, ensure structural compliance, and hand over clear, buildable files to your contractor.
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-10 max-w-2xl mx-auto">
+            Coordinating structural details, spatial plans, and quantity takeoffs under a single practice resolves design conflicts early, helping control material costs, verify structural compliance, and deliver clean, constructible files to contractors.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">

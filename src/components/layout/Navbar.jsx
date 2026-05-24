@@ -96,7 +96,7 @@ export default function Navbar() {
             {location.pathname !== "/" && (
               <>
                 <span className="text-gray-500">/</span>
-                <span className="text-sm text-gray-400">
+                <span className="text-sm text-gray-300">
                   {pageName}
                 </span>
               </>
@@ -119,7 +119,7 @@ export default function Navbar() {
                   className={`relative transition-colors duration-200 ${
                     active
                       ? "text-white"
-                      : "text-gray-400 hover:text-blue-400"
+                      : "text-gray-300 hover:text-blue-400"
                   }`}
                 >
                   {item.name}
@@ -224,7 +224,7 @@ export default function Navbar() {
                   <div className="flex justify-end mb-8">
                     <button
                       onClick={() => setIsOpen(false)}
-                      className="text-gray-400 hover:text-blue-400 transition"
+                      className="text-gray-300 hover:text-blue-400 transition"
                     >
                       Close
                     </button>

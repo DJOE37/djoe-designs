@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 
-export function useProjectView(defaultView = "structural") {
+export function useProjectView(defaultView = "architectural") {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentView = searchParams.get("view") || defaultView;
 

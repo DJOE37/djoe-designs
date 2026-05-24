@@ -80,7 +80,7 @@ export default function Insights() {
               Real Construction Challenges
             </h2>
 
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               Technical observations and structured insights drawn from
               real-world construction analysis and engineering experience.
             </p>
@@ -138,7 +138,7 @@ export default function Insights() {
                 <div className="h-px bg-white/10 mb-6" />
 
                 {/* LINK */}
-                <span className="text-sm text-gray-400 group-hover:text-white transition">
+                <span className="text-sm text-gray-300 group-hover:text-white transition">
                   Read Insight →
                 </span>
 

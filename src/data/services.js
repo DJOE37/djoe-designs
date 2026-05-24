@@ -10,8 +10,8 @@ export const services = [
     code: "01",
     title: "Structural Engineering",
     subtitle: "Designing building frames to match actual soil profiles and load pathways.",
-    desc: "We calculate how loads transfer through columns, beams, and slabs down to the foundation. Instead of relying on broad, oversized safety margins to save design time—which adds unnecessary concrete and steel cost—we run localized finite element models for each load-bearing node. By analyzing soil conditions from the geotechnical report alongside physical structural requirements, we design columns and foundation pads that resist bending moments and ground movement, ensuring the structure is safe without wasting material.",
-    relevance: "If structural designs are uncoordinated, contractors face problems like beam deflections under live loads, cracking in non-load-bearing walls, or foundations that do not suit the actual bearing capacity of the soil. We deliver precise reinforcement details and bar bending schedules (BBS) that local municipal authorities can quickly approve and site foremen can execute without translation errors.",
+    desc: "Load transfer analysis determines structural safety. Instead of relying on broad, oversized safety margins to save design time—which inflates concrete and steel costs—the practice models each load-bearing node individually using localized finite element analysis. Grounded in soil report data, columns and foundation pads are sized to resist settlement and lateral wind loads, keeping the structural frame efficient.",
+    relevance: "Uncoordinated drawings lead to site delays, beam deflections under live loads, and foundation designs that clash with actual soil conditions. Clear reinforcement details and compliant bar bending schedules (BBS) secure rapid building control approval and allow foremen to execute without translation errors.",
     capabilities: [
       "Substructure & Soil-Structure Interaction",
       "Reinforced Concrete Framework Design",
@@ -25,14 +25,14 @@ export const services = [
       "Bar Bending Schedules (BBS) for Steel Reinforcement",
       "Geotechnical Evaluation & Soil-Bearing Capacity Matches"
     ],
-    workflow: "We start with the geotechnical borehole data to specify the foundation depth and type. Next, we build a 3D structural model based on spatial dimensions to calculate stress under gravity and lateral wind loads. Finally, we translate these calculations into detailed reinforcement drawings, labeling every bar size, lap length, and bend angle for the contractor."
+    workflow: "Calculations begin with geotechnical borehole data to lock in foundation depths. Next, 3D structural modeling checks stress distributions under dead, live, and wind loads. These calculations translate into reinforcement details showing bar sizes, overlap lap lengths, and clean cover spaces for the contractor."
   },
   {
     code: "02",
     title: "Architectural Design",
     subtitle: "Creating spatial layouts designed to fit realistic structural grids.",
-    desc: "We design architectural concepts by thinking about the physical frame that supports them. In traditional designs, architects often draft open floor plans without considering where columns and shear walls must stand, leading to structural clashes, exposed columns in living spaces, or the need for expensive, post-tensioned beams. Our spatial layouts align with logical column grids from the very first concept. We focus on natural light pathing, practical room dimensions, and functional flow while keeping the underlying structural scheme simple and cost-efficient.",
-    relevance: "Avoids the frustrating cycle of redesigned plans when building control rejects a layout, or when the structural engineer explains that an open-concept layout requires massive steel members that cannot be built within your budget. By integrating structural planning with spatial layouts, you receive drawings that translate directly to site permits and construction.",
+    desc: "Spatial layouts are developed in tandem with structural gridlines. Designing open plans without structural coordination leads to columns in the middle of rooms or complex concrete transfer beams. Architectural concepts align with logical column grids from day one, balancing circulation flow and daylighting while maintaining structural simplicity.",
+    relevance: "This approach prevents redesign cycles when building control flags framing issues or structural steel requirements overrun budgets. By coordinating architecture with structural engineering early, designs transition smoothly into construction permits.",
     capabilities: [
       "Concept Spatial Planning & Layout Design",
       "High-Resolution 3D Visualization & Interior Renders",
@@ -46,14 +46,14 @@ export const services = [
       "Architectural Detail Sheets (Wet Areas, Staircases, Finishes)",
       "Schedules of Openings (Windows, Doors) and Materials"
     ],
-    workflow: "We trace spatial concepts over load-bearing column grids to keep spans reasonable. Once you approve the layout, we model the volumes in 3D to refine window placement and material selections. We then generate the final dimensioned drawings required for municipal building control and site construction."
+    workflow: "Spatial schemes are drafted over active column layouts to ensure realistic spans. Once approved, the building volume is modeled in 3D to position window openings and detail envelope materials before generating final construction sheets."
   },
   {
     code: "03",
     title: "BOQ & Cost Intelligence",
     subtitle: "Converting drawings into detailed material schedules to protect project budgets.",
-    desc: "A construction budget is only as reliable as the measurements it is built on. We audit architectural and structural plans to calculate exact quantities of excavation volume, concrete cubic meters, reinforcement steel tonnage, and finishing surface areas. Instead of using rough square-meter estimates that ignore actual site variables, we categorize every item under standardized trade codes. We apply current local market rates for materials and labor so you know the true cost of your building before requesting contractor bids.",
-    relevance: "Prevents contractor price inflation and unexpected claims for 'extra work' during construction. If a material takeoff misses temporary items like excavation shoring or concrete formwork, developers end up paying high variations later. A detailed Bill of Quantities (BOQ) establishes a fixed benchmark, so you only pay for materials that are actually specified in the drawings.",
+    desc: "A reliable budget requires precise calculations. Drawings are audited to extract exact excavation volumes, concrete cubic meters, steel tonnage, and finishing surface areas. Rather than using generic square-meter estimates, material schedules match actual drawing dimensions and current local trade rates.",
+    relevance: "Quantifying every item under SMM7/CESMM measurement rules prevents contractor price inflation and late variation claims. If auxiliary works like dewatering or excavation shoring are omitted in the tender, budget creep is inevitable. A standardized BOQ locks in contractor bidding.",
     capabilities: [
       "Standard Method of Measurement Audits (SMM7/CESMM)",
       "Concrete Volume & Steel Tonnage Material Takeoffs",
@@ -67,14 +67,14 @@ export const services = [
       "Material Schedules for Direct Procurement",
       "Stage Payment Valuation & Cashflow Forecast Frameworks"
     ],
-    workflow: "We measure every structural member, masonry wall, and finish layer from the approved drawings. These quantities are compiled into a structured document, verified against current trade rates, and organized into tender packages so you can compare contractor bids on an exact, apple-to-apple basis."
+    workflow: "Detailed takeoffs are compiled from approved architectural and engineering plans. These quantities are structured into clear tender packages, enabling apple-to-apple contractor bidding and secure project capital management."
   },
   {
     code: "04",
     title: "Construction Consultancy",
     subtitle: "Providing technical supervision on site to ensure calculations match execution.",
-    desc: "Even the most accurate structural calculations cannot protect a building if they are executed incorrectly on site. We provide site coordination at critical project milestones—such as foundation excavations, ground beam reinforcement, and suspended slab layouts—before any concrete is poured. We check that reinforcing bars are placed in the correct tension zones, overlap lengths comply with anchorage standards, and concrete cover blocks are positioned to prevent steel rusting. We act as your technical representative on site, checking that the contractor builds according to the drawings.",
-    relevance: "Once concrete is cast, correcting errors requires destructive demolition or expensive structural retrofitting. We check the steel diameters, spacing, and clean cover blocks directly in the formwork before casting. This inspection minimizes structural liability, verifies that contractors do not cut corners, and provides the quality assurance needed for long-term safety.",
+    desc: "Physical construction must reflect approved calculation plans. Site supervision is provided at critical milestones—such as foundation steel setting, column starter placements, and floor slab casting—before any concrete is poured. Rebar layouts are checked in the formwork to ensure steel is in the correct tension zones with compliant overlap anchorages.",
+    relevance: "Once concrete is cast, verifying internal steel is impossible without destructive coring. Pre-pour site checks confirm bar spacing, steel diameters, and cover block offsets, minimizing developer liability and verifying contractor build quality.",
     capabilities: [
       "Rebar Layout & Tension Zone Reinforcement Audits",
       "Concrete Mix Slump & Compression Test Inspections",
@@ -88,6 +88,6 @@ export const services = [
       "Certified Valuation Slips for Stage Payment Approvals",
       "Structural Remedial Action Plans for Construction Defect Resolution"
     ],
-    workflow: "We schedule site visits to inspect formwork and rebar cages before any concrete is poured. We check bar sizes, hook shapes, cleanliness, and cover spaces against the engineering details. If we find errors, we mark them on site and approve the pour only after the contractor corrects the installation."
+    workflow: "Site inspections are scheduled before concrete pours. Formwork dimensions, steel cages, lap lengths, and spacers are verified against construction drawings. Pour approvals are granted only when installation matches approved layouts."
   }
 ];

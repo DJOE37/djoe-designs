@@ -1,19 +1,4 @@
-/**
- *: ProjectsPreview * -------------------------------------------------------------------
- * -------------------------------------------------------------------
- * System-Aligned Version
- *
- * Purpose:
- * - Showcase selected projects with design consistency
- * - Reinforce real-world engineering application
- *
- * Design System:
- * - Blue accent consistency
- * - Soft layered cards
- * - Premium spacing and motion
- * -------------------------------------------------------------------
- */
-
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { projects } from "../../data/projects";
@@ -70,7 +55,7 @@ function getDailyProjects(allProjects, count = 3) {
 // ========================
 
 export default function ProjectsPreview() {
-  const dailyFeaturedProjects = getDailyProjects(projects, 3);
+  const dailyFeaturedProjects = useMemo(() => getDailyProjects(projects, 3), []);
   return (
     <section className="relative border-b border-white/10">
 
@@ -105,7 +90,7 @@ export default function ProjectsPreview() {
               Real Projects
             </h2>
 
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed">
               A curated selection of projects demonstrating structural
               performance, cost awareness, and execution-focused thinking.
             </p>

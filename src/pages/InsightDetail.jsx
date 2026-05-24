@@ -67,6 +67,8 @@ export default function InsightDetail() {
             <img 
               src={insight.image} 
               alt={insight.title} 
+              loading="eager"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
             />
             {/* Gradient overlay for readability and premium feel */}
@@ -101,7 +103,7 @@ export default function InsightDetail() {
                     <h3 className="text-lg md:text-xl font-semibold text-white tracking-wide">
                       {sec.title}
                     </h3>
-                    <p className="text-sm text-gray-400 leading-relaxed max-w-3xl">
+                    <p className="text-sm text-gray-300 leading-relaxed max-w-3xl">
                       {sec.text}
                     </p>
                   </div>
@@ -152,6 +154,8 @@ export default function InsightDetail() {
                       <img
                         src={rel.image}
                         alt={rel.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
@@ -178,8 +182,8 @@ export default function InsightDetail() {
             <h3 className="text-2xl font-semibold text-white">
               Get Professional Input
             </h3>
-            <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-              Coordinate your design parameters, cost control guidelines, and execution monitoring under a single disciplined engineering practice.
+            <p className="text-gray-300 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+              Coordinating design parameters, cost control guidelines, and execution monitoring under a single disciplined engineering practice.
             </p>
             <a
               href={generateWhatsAppLink(`Hello DJOE Designs, I read your advisory report on "${insight.title}" and would like to request a technical consultation.`)}

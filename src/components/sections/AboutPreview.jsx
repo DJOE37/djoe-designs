@@ -69,14 +69,14 @@ export default function AboutPreview() {
               Execution-Focused Delivery.
             </h2>
 
-            <p className="text-gray-400 leading-relaxed mb-6">
-              WE operate across structural engineering, architectural coordination,
-              and BOQ intelligence — aligning design intent with real construction execution.
+            <p className="text-gray-300 leading-relaxed mb-6">
+              Practical building design lies at the intersection of structural engineering, architectural detailing,
+              and material auditing. True efficiency happens when these disciplines are coordinated in parallel.
             </p>
 
-            <p className="text-gray-400 leading-relaxed">
-              Every output is developed with clarity, constructability, and cost awareness,
-              ensuring solutions remain valid from concept through site delivery.
+            <p className="text-gray-300 leading-relaxed">
+              Every drawing is cross-checked against realistic construction budgets and site execution constraints, 
+              guaranteeing that design coordinates remain valid from initial concept through contractor handover.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ export default function AboutPreview() {
               <h3 className="text-lg font-medium mb-3 text-white/90">
                 Structural Clarity
               </h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-300 leading-relaxed">
                 Engineering decisions are driven by calculation, stability,
                 and real-world load behavior.
               </p>
@@ -135,7 +135,7 @@ export default function AboutPreview() {
               <h3 className="text-lg font-medium mb-3 text-white/90">
                 Cost Intelligence
               </h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-300 leading-relaxed">
                 Design is continuously aligned with material efficiency and project budget realities.
               </p>
             </div>
@@ -150,7 +150,7 @@ export default function AboutPreview() {
               <h3 className="text-lg font-medium mb-3 text-white/90">
                 Buildability First
               </h3>
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-300 leading-relaxed">
                 Every design is validated against execution constraints before finalization.
               </p>
             </div>

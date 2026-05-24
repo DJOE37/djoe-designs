@@ -30,7 +30,7 @@ export default function Footer() {
             D’JOE
           </h3>
 
-          <p className="text-sm text-gray-400 leading-relaxed max-w-sm">
+          <p className="text-sm text-gray-300 leading-relaxed max-w-sm">
             We operate at the intersection of structural engineering, architectural coordination,
             and construction intelligence — developing solutions that translate design intent into
             safe, cost-aware, and buildable real-world structures.
@@ -74,7 +74,7 @@ export default function Footer() {
               Contact & Consultation
             </p>
 
-            <div className="space-y-3 text-sm text-gray-400">
+            <div className="space-y-3 text-sm text-gray-300">
               <p className="flex items-center gap-2">
                 <span className="text-blue-400 font-mono text-xs">LOCATION:</span>
                 <span>{contactConfig.location}</span>

@@ -38,7 +38,7 @@ export default function RelatedProjectLinks({ currentId, currentTag }) {
   return (
     <div className="space-y-6 text-left">
       <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-500 font-mono">Related Projects</h4>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         {relatedProjects.map((proj) => (
           <Link
             key={proj.id}
@@ -53,6 +53,8 @@ export default function RelatedProjectLinks({ currentId, currentTag }) {
               <img
                 src={proj.image}
                 alt={proj.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />

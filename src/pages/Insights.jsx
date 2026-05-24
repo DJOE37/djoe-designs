@@ -31,7 +31,7 @@ const insightsFaqs = [
   },
   {
     q: "How do you control structural concrete costs without reducing safety factor limits?",
-    a: "We run finite element analysis on structural nodes to calculate the exact bending and shear stresses. Instead of standardizing all columns to a single, oversized dimension with thick rebar to save design time, we detail members relative to actual stress values. Value-engineering bar bending schedules (BBS) usually reduces total steel weight by 12% to 18%."
+    a: "Finite element analysis is conducted on structural nodes to calculate the exact bending and shear stresses. Instead of standardizing all columns to a single, oversized dimension with thick reinforcement to save design time, members are detailed relative to actual load profiles. Value-engineering bar bending schedules (BBS) usually reduces total steel weight by 12% to 18%."
   },
   {
     q: "Why do Bill of Quantities (BOQ) takeoffs prevent contractor variation claims on site?",
@@ -104,8 +104,8 @@ export default function Insights() {
             <h1 className="text-3xl md:text-5xl font-semibold leading-tight text-white">
               Engineering Advisory & Field Insights
             </h1>
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-              Technical reports, structural observations, and cost surveying intelligence compiled by our practicing specialists to address building risks, code compliance, and execution efficiency.
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+              Technical reports, structural observations, and cost surveying audits compiled from active sites to address building risks, code compliance, and material efficiencies.
             </p>
           </div>
 
@@ -125,6 +125,8 @@ export default function Insights() {
                   <img 
                     src={featuredInsight.image} 
                     alt={featuredInsight.title} 
+                    loading="eager"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-102"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -152,7 +154,7 @@ export default function Insights() {
                       </Link>
                     </h3>
 
-                    <p className="text-xs md:text-sm text-gray-400 leading-relaxed line-clamp-4">
+                    <p className="text-xs md:text-sm text-gray-300 leading-relaxed line-clamp-4">
                       {featuredInsight.summary}
                     </p>
                   </div>
@@ -223,6 +225,8 @@ export default function Insights() {
                     <img
                       src={item.image}
                       alt={item.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -237,7 +241,7 @@ export default function Insights() {
                       <h4 className="text-xs sm:text-sm font-semibold text-white group-hover:text-blue-400 transition leading-snug line-clamp-2">
                         {item.title}
                       </h4>
-                      <p className="text-[10px] sm:text-xs text-gray-400 leading-relaxed line-clamp-2 sm:line-clamp-3">
+                      <p className="text-[10px] sm:text-xs text-gray-300 leading-relaxed line-clamp-2 sm:line-clamp-3">
                         {item.summary}
                       </p>
                     </div>
@@ -301,7 +305,7 @@ export default function Insights() {
                         transition={{ duration: 0.25 }}
                         className="overflow-hidden"
                       >
-                        <div className="px-5 pb-5 pt-2 border-t border-white/5 text-[11px] sm:text-xs text-gray-400 leading-relaxed">
+                        <div className="px-5 pb-5 pt-2 border-t border-white/5 text-[11px] sm:text-xs text-gray-300 leading-relaxed">
                           {faq.a}
                         </div>
                       </motion.div>
@@ -320,8 +324,8 @@ export default function Insights() {
               Need Professional Engineering Advisory?
             </h3>
 
-            <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-              Coordinate your design parameters, cost control guidelines, and execution monitoring under a single disciplined engineering practice.
+            <p className="text-gray-300 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+              Coordinating design parameters, cost control guidelines, and execution monitoring under a single disciplined engineering practice.
             </p>
 
             <a

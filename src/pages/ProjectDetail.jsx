@@ -12,11 +12,10 @@
  */
 
 import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import PageTransition from "../components/animations/PageTransition";
 import { projects } from "../data/projects/index";
 import { useProjectView } from "../hooks/useProjectView";
-import ProjectMetrics from "../components/projects/ProjectMetrics";
-import ProjectViewTabs from "../components/projects/ProjectViewTabs";
 import ProjectViewContent from "../components/projects/ProjectViewContent";
 import RelatedProjectLinks from "../components/projects/RelatedProjectLinks";
 import { generateWhatsAppLink } from "../data/contact";
@@ -27,7 +26,7 @@ export default function ProjectDetail() {
   // Find project based on URL parameter
   const project = projects.find((p) => p.id === id);
 
-  const { currentView, setView } = useProjectView("structural");
+  const { currentView, setView } = useProjectView("architectural");
 
   // Fallback if project not found
   if (!project) {
@@ -62,6 +61,8 @@ export default function ProjectDetail() {
             <img 
               src={project.image} 
               alt={project.title} 
+              loading="eager"
+              decoding="async"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-102"
             />
             {/* Gradient overlay for readability and premium feel */}
@@ -81,44 +82,64 @@ export default function ProjectDetail() {
 
           {/* DESCRIPTION */}
           <div className="text-left max-w-4xl">
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed">
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed">
               {project.views[currentView]?.description || project.description}
             </p>
           </div>
 
-          {/* PROJECT KPIs METRICS */}
-          <div className="border-y border-white/10 py-10">
-            <ProjectMetrics metrics={project.metrics} />
-          </div>
-
-          {/* DYNAMIC DISCIPLINE VIEW SYSTEM (GRID LAYOUT) */}
-          <div className="grid lg:grid-cols-5 gap-12 items-start pt-4">
-            {/* Left Selection Sidebar (Desktop) */}
-            <div className="lg:col-span-2 space-y-8">
-              <div className="space-y-4 text-left">
-                <h4 className="text-xs uppercase tracking-wider text-gray-500 font-mono">Select Engineering Discipline</h4>
-                <ProjectViewTabs currentView={currentView} setView={setView} />
-              </div>
-
-              {/* Related project links positioned underneath sidebar in desktop */}
-              <div className="hidden lg:block pt-8 border-t border-white/10">
-                <RelatedProjectLinks currentId={project.id} currentTag={project.tag} />
+          {/* DYNAMIC DISCIPLINE VIEW SYSTEM (STICKY SWITCHER & CONDITIONAL VIEW) */}
+          <div className="space-y-12">
+            {/* STICKY SEGMENTED CONTROL BAR */}
+            <div className="sticky top-20 z-30 bg-[#0f0f0f]/90 backdrop-blur-md border-b border-white/10 py-4 -mx-6 px-6 sm:mx-0 sm:px-0">
+              <div className="max-w-4xl mx-auto flex justify-center">
+                <div className="grid grid-cols-3 sm:flex bg-white/[0.02] border border-white/10 rounded-2xl sm:rounded-full p-1 w-full sm:w-auto gap-2 sm:gap-1">
+                  {[
+                    { key: "architectural", label: "Architectural Design", shortLabel: "Architectural" },
+                    { key: "structural", label: "Structural Engineering", shortLabel: "Structural" },
+                    { key: "boq", label: "BOQ & Cost Intelligence", shortLabel: "BOQ" },
+                    { key: "construction", label: "Construction Support", shortLabel: "Construction" }
+                  ].map((segment) => {
+                    const isActive = currentView === segment.key;
+                    return (
+                      <button
+                        key={segment.key}
+                        onClick={() => {
+                          if (!isActive) setView(segment.key);
+                        }}
+                        className={`
+                          relative flex-1 sm:flex-initial px-3 py-2 text-[10px] sm:px-4 sm:py-2.5 sm:text-xs font-mono font-medium rounded-full text-center transition-colors duration-300 whitespace-nowrap focus:outline-none
+                          ${isActive ? "text-white" : "text-gray-400 hover:text-white"}
+                        `}
+                      >
+                        {isActive && (
+                          <motion.div
+                            layoutId="active-pill"
+                            className="absolute inset-0 bg-blue-500/10 border border-blue-500/30 rounded-full"
+                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                          />
+                        )}
+                        <span className="relative z-10 hidden sm:inline">{segment.label}</span>
+                        <span className="relative z-10 sm:hidden">{segment.shortLabel}</span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
 
-            {/* Right Active View Content / Mobile Accordion */}
-            <div className="lg:col-span-3">
+            {/* CONDITIONAL PERSPECTIVE CONTENT */}
+            <div className="max-w-5xl mx-auto">
               <ProjectViewContent
                 project={project}
                 currentView={currentView}
                 setView={setView}
               />
             </div>
-          </div>
-
-          {/* Mobile Related project links wrapper */}
-          <div className="lg:hidden pt-12 border-t border-white/10">
-            <RelatedProjectLinks currentId={project.id} currentTag={project.tag} />
+            
+            {/* RELATED PROJECTS (FULL WIDTH UNDER CONTENT) */}
+            <div className="border-t border-white/10 pt-16 mt-8">
+              <RelatedProjectLinks currentId={project.id} currentTag={project.tag} />
+            </div>
           </div>
 
           {/* FINAL CALL TO ACTION */}
@@ -127,8 +148,8 @@ export default function ProjectDetail() {
               Request Similar Project Sizing
             </h3>
 
-            <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-              Coordinate your design parameters, cost control guidelines, and execution monitoring under a single disciplined engineering practice.
+            <p className="text-gray-300 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+              Coordinating design parameters, cost control guidelines, and execution monitoring under a single disciplined engineering practice.
             </p>
 
             <a

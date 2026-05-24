@@ -33,6 +33,8 @@ export default function ProjectCard({ project }) {
           <img
             src={project.image}
             alt={project.title}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-black/35" />
@@ -51,7 +53,7 @@ export default function ProjectCard({ project }) {
           </h3>
 
           {/* 4. Short description block */}
-          <p className="text-xs text-gray-400 leading-relaxed line-clamp-2">
+          <p className="text-xs text-gray-300 leading-relaxed line-clamp-2">
             {project.description}
           </p>
 

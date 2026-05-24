@@ -42,15 +42,15 @@ const itemVariants = {
 const principles = [
   {
     title: "Structural Integrity",
-    desc: "We prioritize mechanical stability and mathematically verified load path solutions to guarantee security.",
+    desc: "Load path continuity determines structural safety. Analysis maps how forces transfer from roofs down to foundation footings, ensuring columns are verified mathematically.",
   },
   {
     title: "Economic Intelligence",
-    desc: "By merging BOQ intelligence directly into early designs, we eliminate material waste and price variations.",
+    desc: "Early cost takeoffs protect project capital. Aligning material bills directly with structural member sizing mitigates budget creep and variation claims before construction begins.",
   },
   {
     title: "Symmetric Design",
-    desc: "We coordinate architectural aesthetics and structural frames in parallel to maintain spatial intent.",
+    desc: "Spatial layout respects physical geometry. Planning space flow in tandem with structural gridlines keeps rooms open and structural schemes simple.",
   },
 ];
 
@@ -118,10 +118,10 @@ export default function About() {
             <h1 className="text-4xl md:text-5xl font-semibold leading-tight mb-8">
               Pioneering Buildable Engineering Systems
             </h1>
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed">
-              We design structures with mathematical rigour, architectural sensitivity, and structural intelligence. 
-              Our practice is founded on the conviction that structural calculations and cost control should not be late additions, 
-              but the core foundations of every creative project.
+            <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+              Buildable engineering systems are developed at the intersection of mathematical structural calculations, architectural detailing, and cost control. 
+              The practice is founded on the conviction that engineering verification and material budgets should not be late additions, 
+              but the active foundation of every design concept.
             </p>
           </motion.div>
 
@@ -149,7 +149,7 @@ export default function About() {
                   {i + 1}
                 </div>
                 <h3 className="text-lg font-medium text-white mb-4">{pr.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{pr.desc}</p>
+                <p className="text-gray-300 text-sm leading-relaxed">{pr.desc}</p>
               </div>
             ))}
           </motion.div>
@@ -168,9 +168,8 @@ export default function About() {
                 <h2 className="text-2xl md:text-3xl font-semibold leading-tight text-white mb-6">
                   Structured Execution Pipeline
                 </h2>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  We translate concept drawings into physical stability through an audit-driven sequence that tracks load constraints, 
-                  material volumes, and onsite execution factors.
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  A structured workflow bridges the gap between design sheets and site execution. Auditing load paths, material volumes, and steel offsets early keeps designs cost-controlled and ready for building control approvals.
                 </p>
               </div>
             </motion.div>
@@ -195,7 +194,7 @@ export default function About() {
                     Phase {st.num}
                   </p>
                   <h4 className="text-base font-medium text-white mb-3">{st.phase}</h4>
-                  <p className="text-gray-400 text-xs leading-relaxed">{st.desc}</p>
+                  <p className="text-gray-300 text-xs leading-relaxed">{st.desc}</p>
                 </div>
               ))}
             </motion.div>
@@ -212,9 +211,8 @@ export default function About() {
             <h3 className="text-2xl font-semibold mb-6">
               Let's Coordinate Your Next Project
             </h3>
-            <p className="text-gray-400 mb-10 max-w-xl mx-auto text-sm leading-relaxed">
-              From reinforced concrete residential frames to comprehensive commercial bill analysis, 
-              we ensure your project remains buildable and cost-controlled.
+            <p className="text-gray-300 mb-10 max-w-xl mx-auto text-sm leading-relaxed">
+              From foundation soil-structure matching to comprehensive SMM7 Bills of Quantities, the practice resolves design conflicts early, ensuring smooth site handovers and cost control.
             </p>
             <div className="flex justify-center gap-4">
               <Link

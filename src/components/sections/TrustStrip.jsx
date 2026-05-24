@@ -101,7 +101,7 @@ export default function TrustStrip() {
                       Structural, Architectural & Cost Systems Aligned for Construction
                   </h2>
 
-                  <p className="text-gray-400 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                       Structural engineering, architectural design, and BOQ intelligence integrated into a single execution-focused workflow for accurate, buildable project delivery.
                   </p>
 
@@ -143,7 +143,7 @@ export default function TrustStrip() {
               </h3>
 
               {/* DESCRIPTION */}
-              <p className="text-sm text-gray-400 leading-relaxed">
+              <p className="text-sm text-gray-300 leading-relaxed">
                 {item.description}
               </p>
             </motion.div>

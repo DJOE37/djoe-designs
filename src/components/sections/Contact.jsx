@@ -50,10 +50,8 @@ export default function Contact() {
         </h2>
 
         {/* TEXT */}
-        <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed mb-12">
-          Engage with a structured, engineering-led approach to design,
-          cost evaluation, and construction execution. Every project begins
-          with clarity, precision, and a deep understanding of buildability.
+        <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed mb-12">
+          A structured, engineering-led approach to design, cost evaluation, and construction execution. Realizing project intent requires clarity, budget coordination, and buildability checks at each milestone.
         </p>
 
         {/* CTA */}
