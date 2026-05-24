@@ -52,7 +52,7 @@ export default function Hero() {
 
   return (
     <section className="relative w-full border-b border-white/10 overflow-hidden bg-[#0f0f0f]">
-      
+
       {/* ======================================================
           BACKGROUND SYSTEM
       ====================================================== */}
@@ -75,7 +75,7 @@ export default function Hero() {
           SEAMLESS MARQUEE SYSTEM (FIXED DUAL-LAYER PARALLAX)
       ====================================================== */}
       <div className="absolute inset-x-0 top-0 h-64 sm:h-80 md:h-96 overflow-hidden pause-on-hover pointer-events-auto">
-        
+
         {/* DEPTH LAYER (SUBTLE PARALLAX - SLOW) */}
         <div className="absolute inset-x-0 top-0 h-64 sm:h-80 md:h-96 flex">
           {/* Track 1 */}
@@ -183,29 +183,18 @@ export default function Hero() {
           animate="visible"
         >
 
-          <motion.p
-            variants={itemVariants}
-            className="text-sm text-blue-400 tracking-[0.25em] uppercase mb-4"
-          >
-            Built Environment Engineering
-          </motion.p>
-
           <motion.h1
             variants={itemVariants}
             className="text-4xl md:text-5xl font-semibold leading-tight mb-6"
           >
-            Structuring Ideas,
-            <br />
-            Designing Spaces,
-            <br />
-            Delivering Construction Reality
+            Engineering for Buildings That Actually Get Built
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
             className="text-gray-300 text-base leading-relaxed mb-10 max-w-xl"
           >
-            Coordinating structural calculations, architectural detailing, and cost takeoffs under a single practice. Focusing on buildability and cost-control ensures that designs translate cleanly to site execution without variations.
+            Structural design, architectural planning, and cost control... coordinated into clear, buildable construction outcomes.
           </motion.p>
 
           <motion.div

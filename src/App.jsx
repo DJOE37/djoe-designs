@@ -13,8 +13,7 @@
  * -------------------------------------------------------------------
  */
 
-import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { Routes, Route } from "react-router-dom";
 
 // ========================
 // Pages
@@ -35,7 +34,6 @@ import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
 export default function App() {
-  const location = useLocation(); // Tracks route changes (CRITICAL for transitions)
 
   return (
     <div className="bg-[#0f0f0f] text-white min-h-screen overflow-x-hidden">
@@ -50,14 +48,7 @@ export default function App() {
           AnimatePresence enables exit + enter animations 
           mode="wait" ensures smooth transition (one page exits before next enters)
         */}
-        <AnimatePresence mode="wait">
-
-          {/* 
-            IMPORTANT:
-            - location={location} allows animation tracking
-            - key={location.pathname} triggers animation on route change
-          */}
-          <Routes location={location} key={location.pathname}>
+          <Routes>
 
             {/* ---------------- PRIMARY PAGES ---------------- */}
             <Route path="/" element={<Home />} />
@@ -72,8 +63,6 @@ export default function App() {
             <Route path="/insights/:id" element={<InsightDetail />} />
 
           </Routes>
-
-        </AnimatePresence>
 
       </main>
 

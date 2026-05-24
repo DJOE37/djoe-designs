@@ -76,7 +76,7 @@ export default function InsightDetail() {
             
             <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-10 space-y-3 text-left">
               <div className="flex flex-wrap items-center gap-3">
-                <span className="text-[9px] font-mono text-blue-400 bg-blue-500/[0.08] px-3 py-1 rounded-full uppercase tracking-wider border border-blue-500/20 backdrop-blur-sm">
+                <span className="text-[10px] font-mono text-blue-400 bg-[#0f0f0f]/90 border border-blue-500/25 px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm shadow-md">
                   {insight.category}
                 </span>
                 <span className="text-[9px] text-gray-300 font-mono tracking-wide">{insight.readTime}</span>
@@ -159,7 +159,7 @@ export default function InsightDetail() {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                      <span className="absolute bottom-3 left-4 text-[9px] font-mono text-blue-400 bg-blue-500/[0.08] px-2 py-0.5 rounded-md uppercase tracking-wider">
+                      <span className="absolute bottom-3 left-4 text-[10px] font-mono text-blue-400 bg-[#0f0f0f]/90 border border-blue-500/25 px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm shadow-md">
                         {rel.category}
                       </span>
                     </div>

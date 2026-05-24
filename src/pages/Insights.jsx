@@ -98,9 +98,6 @@ export default function Insights() {
               1. HERO INTRODUCTION SECTION
           ====================================================== */}
           <div className="text-left space-y-4 max-w-3xl">
-            <p className="text-blue-400 uppercase tracking-[0.25em] text-xs">
-              Knowledge Platform
-            </p>
             <h1 className="text-3xl md:text-5xl font-semibold leading-tight text-white">
               Engineering Advisory & Field Insights
             </h1>
@@ -139,7 +136,7 @@ export default function Insights() {
                 <div className="lg:col-span-5 p-8 md:p-12 flex flex-col justify-between space-y-6">
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <span className="text-[9px] font-mono text-blue-400 uppercase tracking-widest">
+                      <span className="text-[10px] font-mono text-blue-400 bg-blue-500/10 border border-blue-500/20 px-2.5 py-1 rounded-md uppercase tracking-wider">
                         {featuredInsight.category}
                       </span>
                       <span className="text-gray-600 font-mono text-[9px]">•</span>
@@ -230,7 +227,7 @@ export default function Insights() {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    <span className="absolute bottom-3 left-4 text-[9px] font-mono text-blue-400 bg-blue-500/[0.08] px-2 py-0.5 rounded-md uppercase tracking-wider">
+                    <span className="absolute bottom-3 left-4 text-[10px] font-mono text-blue-400 bg-[#0f0f0f]/90 border border-blue-500/25 px-2.5 py-1 rounded-md uppercase tracking-wider backdrop-blur-sm shadow-md">
                       {item.category}
                     </span>
                   </div>

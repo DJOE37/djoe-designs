@@ -99,11 +99,7 @@ export default function ServicesPage() {
   const activeService = services[activeTab !== null ? activeTab : 0];
 
   const handleCardClick = (idx) => {
-    if (window.innerWidth < 1024) {
-      setActiveTab(activeTab === idx ? null : idx);
-    } else {
-      setActiveTab(idx);
-    }
+    setActiveTab(idx);
   };
 
   return (
@@ -205,8 +201,37 @@ export default function ServicesPage() {
 
           <div className="grid lg:grid-cols-5 gap-12 items-stretch">
 
-            {/* Left Selection Cards Sidebar */}
-            <div className="lg:col-span-2 space-y-4">
+            {/* Mobile Selector Pills (visible only below lg breakpoint) */}
+            <div className="lg:hidden col-span-full w-full mb-6">
+              <div className="flex overflow-x-auto gap-2 pb-3 scrollbar-none -mx-6 px-6">
+                {[
+                  { key: 0, label: "Structural Engineering" },
+                  { key: 1, label: "Architectural Design" },
+                  { key: 2, label: "BOQ & Cost" },
+                  { key: 3, label: "Construction" }
+                ].map((segment) => {
+                  const isActive = activeTab === segment.key;
+                  return (
+                    <button
+                      key={segment.key}
+                      onClick={() => setActiveTab(segment.key)}
+                      className={`
+                        px-4 py-2 text-xs rounded-full border whitespace-nowrap transition-all duration-200 flex-shrink-0
+                        ${isActive
+                          ? "border-blue-500/40 text-blue-400 bg-blue-500/[0.08]"
+                          : "border-white/10 text-gray-400 hover:border-blue-500/30 hover:text-blue-400"
+                        }
+                      `}
+                    >
+                      {segment.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Left Selection Cards Sidebar (Desktop Only) */}
+            <div className="lg:col-span-2 space-y-4 hidden lg:block">
               {services.map((item, idx) => {
                 const isActive = activeTab === idx;
                 const isDefaultActiveDesktop = activeTab === null && idx === 0;
@@ -252,84 +277,13 @@ export default function ServicesPage() {
                         {item.subtitle}
                       </p>
                     </div>
-
-                    {/* Mobile Inline Content Panel */}
-                    <AnimatePresence initial={false}>
-                      {isActive && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.25 }}
-                          className="overflow-hidden lg:hidden"
-                        >
-                          <div className="px-6 pb-6 pt-2 border-t border-white/10 space-y-8">
-                            {/* Philosophy Callout */}
-                            <div className="border-l-2 border-blue-500 pl-5 py-1">
-                              <h4 className="text-xs text-gray-500 uppercase tracking-wider mb-1 font-mono">Philosophy</h4>
-                              <p className="text-sm text-gray-300 font-medium italic leading-relaxed">
-                                "{item.subtitle}"
-                              </p>
-                            </div>
-
-                            {/* Description & Relevance */}
-                            <div className="space-y-4">
-                              <p className="text-sm text-gray-300 leading-relaxed">
-                                {item.desc}
-                              </p>
-                              
-                              <div className="bg-white/[0.01] border border-white/5 p-5 rounded-xl">
-                                <h5 className="text-xs font-medium text-white mb-2 tracking-wide uppercase">Site Execution Value</h5>
-                                <p className="text-xs text-gray-300 leading-relaxed">
-                                  {item.relevance}
-                                </p>
-                              </div>
-                            </div>
-
-                            {/* Technical Capabilities List */}
-                            <div className="space-y-3">
-                              <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Technical Capability Areas</h5>
-                              <div className="grid sm:grid-cols-2 gap-3">
-                                {item.capabilities.map((cap, i) => (
-                                  <div key={i} className="flex gap-2 items-center text-xs text-gray-300">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500/60" />
-                                    <span>{cap}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* Deliverables List */}
-                            <div className="space-y-3">
-                              <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Service Deliverables</h5>
-                              <div className="grid sm:grid-cols-2 gap-3">
-                                {item.deliverables.map((del, i) => (
-                                  <div key={i} className="flex gap-2 items-start text-xs text-gray-300">
-                                    <span className="text-blue-400 font-mono text-[10px] mt-0.5">✓</span>
-                                    <span>{del}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* Workflow Process */}
-                            <div className="border-t border-white/10 pt-8 space-y-2">
-                              <h5 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Integrated Process Flow</h5>
-                              <p className="text-xs text-gray-300 leading-relaxed">
-                                {item.workflow}
-                              </p>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
                   </div>
                 );
               })}
             </div>
 
-            {/* Right Information-Dense Panel */}
-            <div className="lg:col-span-3 hidden lg:block">
+            {/* Right Information-Dense Panel (Visible on both mobile and desktop) */}
+            <div className="lg:col-span-3 w-full">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab !== null ? activeTab : 0}
