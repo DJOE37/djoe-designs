@@ -11,6 +11,26 @@ const itemVariants = {
 };
 
 export default function ProjectCard({ project }) {
+  const getProjectOutcome = (p) => {
+    const id = (p.id || "").toLowerCase();
+    const tag = (p.tag || "").toLowerCase();
+
+    if (id.includes("warehouse")) {
+      return "Engineered for structural stability and faster site execution.";
+    } else if (tag.includes("duplex")) {
+      return "Planned for better space use and efficient structural coordination.";
+    } else if (tag.includes("hotel")) {
+      return "Designed to improve circulation, comfort, and construction efficiency.";
+    } else if (tag.includes("infrastructure") || id.includes("infra")) {
+      return "Designed to improve durability and reduce construction complications.";
+    } else if (tag.includes("bungalow")) {
+      return "Optimized for cost control and spatial efficiency.";
+    } else if (tag.includes("villa") || tag.includes("residential")) {
+      return "Designed to maximize space and lower execution cost.";
+    }
+    return "Planned for better space use and efficient structural coordination.";
+  };
+
   return (
     <motion.div variants={itemVariants}>
       <Link
@@ -53,8 +73,8 @@ export default function ProjectCard({ project }) {
           </h3>
 
           {/* 4. Short description block */}
-          <p className="text-xs text-gray-300 leading-relaxed line-clamp-2">
-            {project.description}
+          <p className="text-xs text-gray-300 leading-relaxed line-clamp-1 font-normal">
+            {getProjectOutcome(project)}
           </p>
 
           <div className="h-px bg-white/10 my-2" />

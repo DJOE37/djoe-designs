@@ -85,14 +85,11 @@ export default function ProjectsPreview() {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-6">
-              Engineering Solutions Applied in
-              <br />
-              Real Projects
+              Projects Designed for Real Construction
             </h2>
 
             <p className="text-gray-300 leading-relaxed">
-              A curated selection of projects demonstrating structural
-              performance, cost awareness, and execution-focused thinking.
+              A selection of projects focused on buildability, cost control, and smoother site execution.
             </p>
 
           </div>

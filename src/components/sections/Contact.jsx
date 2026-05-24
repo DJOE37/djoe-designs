@@ -37,28 +37,21 @@ export default function Contact() {
       {/* ================= CONTAINER ================= */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-28 text-center">
 
-        {/* EYEBROW */}
-        <p className="text-blue-400 uppercase tracking-[0.25em] text-xs mb-4">
-          Start a Project
-        </p>
-
         {/* HEADLINE */}
         <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-6">
-          Ready to Move from Concept to
-          <br />
-          Constructible Solution?
+          Ready to Start Your Project?
         </h2>
 
         {/* TEXT */}
         <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed mb-12">
-          A structured, engineering-led approach to design, cost evaluation, and construction execution. Realizing project intent requires clarity, budget coordination, and buildability checks at each milestone.
+          Structural design, architectural planning, BOQ preparation, and construction support — coordinated to help your project move smoothly from idea to execution.
         </p>
 
         {/* CTA */}
         <div className="flex flex-wrap justify-center gap-4">
 
           <a
-            href={generateWhatsAppLink("Hello DJOE Designs, I viewed your project portfolio and would like to discuss a similar project.")}
+            href={generateWhatsAppLink("Hello DJOE Designs, I viewed your project portfolio and would like to discuss a project.")}
             target="_blank"
             rel="noopener noreferrer"
             className="
@@ -69,7 +62,7 @@ export default function Contact() {
               hover:-translate-y-0.5
             "
           >
-            Message on WhatsApp
+            Start Project Discussion
           </a>
 
           <Link

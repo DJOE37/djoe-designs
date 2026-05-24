@@ -75,14 +75,11 @@ export default function Insights() {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-6">
-              Engineering Thinking Applied to
-              <br />
-              Real Construction Challenges
+              Lessons from Real Construction Projects
             </h2>
 
             <p className="text-gray-300 leading-relaxed">
-              Technical observations and structured insights drawn from
-              real-world construction analysis and engineering experience.
+              Practical observations from structural design, budgeting, and construction experience.
             </p>
 
           </div>
@@ -130,9 +127,14 @@ export default function Insights() {
                 </p>
 
                 {/* TITLE */}
-                <h3 className="text-lg font-medium mb-6 leading-snug group-hover:text-white transition">
+                <h3 className="text-lg font-medium mb-4 leading-snug group-hover:text-white transition">
                   {item.title}
                 </h3>
+
+                {/* ONE-LINE SUMMARY */}
+                <p className="text-xs text-gray-400 leading-relaxed mb-6 line-clamp-1">
+                  {item.summary}
+                </p>
 
                 {/* DIVIDER */}
                 <div className="h-px bg-white/10 mb-6" />

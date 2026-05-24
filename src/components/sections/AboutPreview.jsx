@@ -35,7 +35,7 @@ const itemVariants = {
 
 export default function AboutPreview() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[#0a0a0a]">
 
       {/* SYSTEM TINT */}
       <div className="absolute inset-0 bg-blue-500/[0.01] pointer-events-none" />
@@ -64,38 +64,32 @@ export default function AboutPreview() {
             </p>
 
             <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-6">
-              Engineering-Led Thinking.
-              <br />
-              Execution-Focused Delivery.
+              We Design with Construction Reality in Mind
             </h2>
 
-            <p className="text-gray-300 leading-relaxed mb-6">
-              Practical building design lies at the intersection of structural engineering, architectural detailing,
-              and material auditing. True efficiency happens when these disciplines are coordinated in parallel.
-            </p>
-
             <p className="text-gray-300 leading-relaxed">
-              Every drawing is cross-checked against realistic construction budgets and site execution constraints, 
-              guaranteeing that design coordinates remain valid from initial concept through contractor handover.
+              Every project is planned to reduce confusion on site, improve coordination, and make construction easier to execute.
             </p>
           </div>
 
           {/* CTA (BOTTOM ALIGNED) */}
-          <Link
-            to="/about"
-            className="
-              inline-block
-              border border-white/20
-              px-6 py-3 text-sm mt-10
-              text-white/80
-              hover:text-blue-400
-              hover:border-blue-500/40
-              transition-all duration-200
-              hover:-translate-y-0.5
-            "
-          >
-            Learn More About Our Practice →
-          </Link>
+          <div>
+            <Link
+              to="/about"
+              className="
+                inline-block
+                border border-white/20
+                px-6 py-3 text-sm mt-10
+                text-white/80
+                hover:text-blue-400
+                hover:border-blue-500/40
+                transition-all duration-200
+                hover:-translate-y-0.5
+              "
+            >
+              Learn More →
+            </Link>
+          </div>
 
         </motion.div>
 
@@ -108,53 +102,26 @@ export default function AboutPreview() {
         >
 
           <div className="space-y-6">
-
-            <div className="
-              bg-white/[0.02]
-              border border-white/10
-              rounded-2xl p-6
-              hover:border-blue-500/30
-              transition-all duration-300
-            ">
-              <h3 className="text-lg font-medium mb-3 text-white/90">
-                Structural Clarity
-              </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Engineering decisions are driven by calculation, stability,
-                and real-world load behavior.
-              </p>
-            </div>
-
-            <div className="
-              bg-white/[0.02]
-              border border-white/10
-              rounded-2xl p-6
-              hover:border-blue-500/30
-              transition-all duration-300
-            ">
-              <h3 className="text-lg font-medium mb-3 text-white/90">
-                Cost Intelligence
-              </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Design is continuously aligned with material efficiency and project budget realities.
-              </p>
-            </div>
-
-            <div className="
-              bg-white/[0.02]
-              border border-white/10
-              rounded-2xl p-6
-              hover:border-blue-500/30
-              transition-all duration-300
-            ">
-              <h3 className="text-lg font-medium mb-3 text-white/90">
-                Buildability First
-              </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">
-                Every design is validated against execution constraints before finalization.
-              </p>
-            </div>
-
+            {[
+              "Structural Clarity",
+              "Cost Control",
+              "Buildability"
+            ].map((title, index) => (
+              <div
+                key={index}
+                className="
+                  bg-white/[0.02]
+                  border border-white/10
+                  rounded-2xl p-6
+                  hover:border-blue-500/30
+                  transition-all duration-300
+                "
+              >
+                <h3 className="text-base font-semibold text-white/90">
+                  {title}
+                </h3>
+              </div>
+            ))}
           </div>
 
         </motion.div>

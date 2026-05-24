@@ -79,7 +79,7 @@ export default function Hero() {
         {/* DEPTH LAYER (SUBTLE PARALLAX - SLOW) */}
         <div className="absolute inset-x-0 top-0 h-64 sm:h-80 md:h-96 flex">
           {/* Track 1 */}
-          <div className="flex gap-8 shrink-0 animate-scroll-slow opacity-[0.08] pr-8">
+          <div className="flex gap-8 shrink-0 animate-scroll-slow opacity-[0.25] pr-8">
             {shuffledImages.map((img, i) => (
               <img
                 key={`t1-slow-${i}`}
@@ -100,7 +100,7 @@ export default function Hero() {
             ))}
           </div>
           {/* Track 2 (Mirror) */}
-          <div className="flex gap-8 shrink-0 animate-scroll-slow opacity-[0.08] pr-8" aria-hidden="true">
+          <div className="flex gap-8 shrink-0 animate-scroll-slow opacity-[0.25] pr-8" aria-hidden="true">
             {shuffledImages.map((img, i) => (
               <img
                 key={`t2-slow-${i}`}
@@ -125,7 +125,7 @@ export default function Hero() {
         {/* PRIMARY LAYER (FAST) */}
         <div className="absolute inset-x-0 top-0 h-56 sm:h-72 md:h-80 flex">
           {/* Track 1 */}
-          <div className="flex gap-8 shrink-0 animate-scroll opacity-[0.18] pr-8">
+          <div className="flex gap-8 shrink-0 animate-scroll opacity-[0.45] pr-8">
             {shuffledImages.map((img, i) => (
               <img
                 key={`t1-fast-${i}`}
@@ -146,7 +146,7 @@ export default function Hero() {
             ))}
           </div>
           {/* Track 2 (Mirror) */}
-          <div className="flex gap-8 shrink-0 animate-scroll opacity-[0.18] pr-8" aria-hidden="true">
+          <div className="flex gap-8 shrink-0 animate-scroll opacity-[0.45] pr-8" aria-hidden="true">
             {shuffledImages.map((img, i) => (
               <img
                 key={`t2-fast-${i}`}
@@ -173,11 +173,11 @@ export default function Hero() {
       {/* ======================================================
           MAIN CONTENT
       ====================================================== */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-end">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-72 pb-24 sm:pt-[22rem] md:pt-[26rem] grid md:grid-cols-2 gap-16 items-end">
 
         {/* LEFT */}
         <motion.div
-          className="max-w-xl"
+          className="max-w-xl text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -187,23 +187,24 @@ export default function Hero() {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-semibold leading-tight mb-6"
           >
-            Engineering for Buildings That Actually Get Built
+            Engineering That Works on Site
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-gray-300 text-base leading-relaxed mb-10 max-w-xl"
+            className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl"
           >
-            Structural design, architectural planning, and cost control... coordinated into clear, buildable construction outcomes.
+            We design buildings that are easier to build, safer to execute, and better coordinated before construction even starts.
           </motion.p>
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-wrap gap-4"
+            className="grid grid-cols-2 gap-4 items-center w-full sm:flex sm:w-auto"
           >
             <Link
               to="/projects"
               className="
+                w-full text-center
                 bg-white text-black
                 px-6 py-3 text-sm font-medium
                 hover:bg-blue-500
@@ -218,8 +219,9 @@ export default function Hero() {
             <Link
               to="/contact"
               className="
+                w-full text-center
                 border border-white/20
-                px-5 py-2 text-sm
+                px-5 py-3 text-sm
                 text-gray-300
                 hover:border-blue-500
                 hover:text-blue-400
@@ -231,11 +233,18 @@ export default function Hero() {
             </Link>
           </motion.div>
 
+          <motion.p
+            variants={itemVariants}
+            className="text-[10px] font-mono tracking-wider text-gray-500 mt-6"
+          >
+            Fewer site mistakes • Better cost control • Smoother construction
+          </motion.p>
+
         </motion.div>
 
         {/* RIGHT */}
         <motion.div
-          className="relative"
+          className="relative text-left"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
@@ -253,17 +262,23 @@ export default function Hero() {
             <div className="space-y-5">
 
               <p className="text-xs text-gray-500 uppercase tracking-wide">
-                Design Philosophy
+                Why Projects Fail
               </p>
 
-              <h3 className="text-lg font-medium leading-relaxed">
-                Structural clarity • Architectural intent • Construction efficiency
+              <h3 className="text-lg font-medium leading-relaxed text-white">
+                Most construction problems start long before site work begins.
               </h3>
 
               <div className="h-px bg-white/10" />
 
               <p className="text-sm text-gray-300 leading-relaxed">
-                Coordinated design where structural grids define stability, architectural layouts shape spatial flow, and material takeoffs verify budget parameters, ensuring buildability in real-world conditions.
+                When structure, architecture, and cost planning are handled separately, projects become harder to build, more expensive to manage, and easier to get wrong on site.
+              </p>
+
+              <div className="h-px bg-white/10" />
+
+              <p className="text-xs text-blue-400 font-mono leading-relaxed">
+                We coordinate everything early to reduce delays, redesigns, and costly mistakes.
               </p>
 
             </div>

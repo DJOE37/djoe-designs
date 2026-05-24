@@ -202,8 +202,8 @@ export default function ServicesPage() {
           <div className="grid lg:grid-cols-5 gap-12 items-stretch">
 
             {/* Mobile Selector Pills (visible only below lg breakpoint) */}
-            <div className="lg:hidden col-span-full w-full mb-6">
-              <div className="flex overflow-x-auto gap-2 pb-3 scrollbar-none -mx-6 px-6">
+            <div className="lg:hidden col-span-full w-full min-w-0 mb-6">
+              <div className="flex flex-wrap gap-2 w-full">
                 {[
                   { key: 0, label: "Structural Engineering" },
                   { key: 1, label: "Architectural Design" },
@@ -216,7 +216,7 @@ export default function ServicesPage() {
                       key={segment.key}
                       onClick={() => setActiveTab(segment.key)}
                       className={`
-                        px-4 py-2 text-xs rounded-full border whitespace-nowrap transition-all duration-200 flex-shrink-0
+                        px-4 py-2 text-xs rounded-full border whitespace-nowrap transition-all duration-200
                         ${isActive
                           ? "border-blue-500/40 text-blue-400 bg-blue-500/[0.08]"
                           : "border-white/10 text-gray-400 hover:border-blue-500/30 hover:text-blue-400"

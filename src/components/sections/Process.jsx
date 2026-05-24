@@ -6,17 +6,12 @@
  *
  * Purpose:
  * - Clearly communicate how projects are executed
- * - Reinforce structured, disciplined engineering thinking
- *
- * Design System:
- * - Strong hierarchy (steps feel sequential)
- * - Subtle blue accent alignment
- * - Clean grid with controlled interaction
+ * - Provide expandable details for professional depth
  * -------------------------------------------------------------------
  */
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 // ========================
 // ANIMATION CONFIG
@@ -48,32 +43,32 @@ const steps = [
   {
     number: "01",
     title: "Project Consultation",
-    description:
-      "Understanding project scope, site conditions, and structural requirements before any design decisions are made."
+    description: "We understand the project goals, site conditions, and possible risks.",
+    details: "Reviewing geotechnical borehole logs, survey mapping, and client design requirements to align engineering assumptions from day one."
   },
   {
     number: "02",
     title: "Engineering Analysis",
-    description:
-      "Structural evaluation, load considerations, and system feasibility based on real construction constraints."
+    description: "We test structural safety and identify potential construction issues early.",
+    details: "Performing finite element grid modeling and mapping wind and gravity load paths to establish slab, column, and foundation sizing parameters."
   },
   {
     number: "03",
     title: "Design & Documentation",
-    description:
-      "Development of structural systems, detailed drawings, and BOQs with precision and coordination clarity."
+    description: "We prepare coordinated drawings and cost plans for construction.",
+    details: "Developing full structural calculation booklets, bar bending schedules (BBS), and standardized material takeoffs to prevent construction variations."
   },
   {
     number: "04",
     title: "Construction Planning",
-    description:
-      "Ensuring buildability, sequencing, and cost alignment before execution begins."
+    description: "We check buildability before work begins on site.",
+    details: "Auditing steel detailing clashes and formwork constructability issues to establish realistic timelines and trade procurement schedules."
   },
   {
     number: "05",
     title: "Execution Support",
-    description:
-      "Providing technical guidance during construction to maintain structural integrity and implementation accuracy."
+    description: "We help ensure construction follows the approved design correctly.",
+    details: "Conducting pre-pour rebar spacing and concrete mix slump audits on site, issuing compliance certificates, and certifying contractor valuations."
   }
 ];
 
@@ -83,15 +78,23 @@ const steps = [
 
 export default function Process() {
   const [hoveredStep, setHoveredStep] = useState(null);
+  const [expandedSteps, setExpandedSteps] = useState({});
+
+  const toggleStep = (index) => {
+    setExpandedSteps((prev) => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
 
   return (
-    <section className="relative border-b border-white/10">
+    <section className="relative border-b border-white/10 bg-[#0f0f0f]">
 
       {/* Subtle system tint (same as other sections) */}
       <div className="absolute inset-0 bg-blue-500/[0.01] pointer-events-none" />
 
       <motion.div
-        className="max-w-7xl mx-auto px-6 py-28 relative z-10"
+        className="max-w-7xl mx-auto px-6 py-28 relative z-10 text-left"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -102,22 +105,18 @@ export default function Process() {
             HEADER BLOCK
         ====================================================== */}
         <motion.div variants={itemVariants} className="max-w-2xl mb-20">
-
           <p className="text-blue-400 uppercase tracking-[0.25em] text-xs mb-4">
             Workflow
           </p>
-
           <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-6">
             A Structured Approach to
             <br />
             Engineering & Execution
           </h2>
-
-          <p className="text-gray-300 leading-relaxed">
+          <p className="text-gray-300 leading-relaxed text-sm">
             Every project follows a disciplined engineering process focused on
             clarity, technical accuracy, and real-world construction outcomes.
           </p>
-
         </motion.div>
 
         {/* ======================================================
@@ -135,6 +134,7 @@ export default function Process() {
             const isAnyHovered = hoveredStep !== null;
             const isPast = isAnyHovered && index < hoveredStep;
             const isFuture = isAnyHovered && index > hoveredStep;
+            const isExpanded = !!expandedSteps[index];
 
             return (
               <motion.div
@@ -142,8 +142,9 @@ export default function Process() {
                 variants={itemVariants}
                 onMouseEnter={() => setHoveredStep(index)}
                 onMouseLeave={() => setHoveredStep(null)}
+                onClick={() => toggleStep(index)}
                 className={`
-                  relative rounded-2xl border p-6 transition-all duration-500
+                  relative rounded-2xl border p-6 transition-all duration-500 cursor-pointer select-none
                   ${isHovered 
                     ? "border-blue-500/40 bg-blue-500/[0.015] shadow-[0_0_30px_rgba(59,130,246,0.04)] scale-[1.02] lg:scale-100 lg:-translate-y-1" 
                     : isPast
@@ -170,15 +171,37 @@ export default function Process() {
                   </div>
                 </div>
 
-                {/* TITLE */}
-                <h3 className="text-base lg:text-lg font-medium mb-4 leading-snug text-white">
-                  {step.title}
-                </h3>
+                {/* TITLE & TOGGLE */}
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-base font-semibold leading-snug text-white pr-2">
+                    {step.title}
+                  </h3>
+                  <span className="text-[9px] font-mono text-blue-400 hover:text-blue-300 transition-colors uppercase shrink-0 pt-1">
+                    {isExpanded ? "Collapse −" : "Details +"}
+                  </span>
+                </div>
 
                 {/* DESCRIPTION */}
-                <p className="text-xs lg:text-sm text-gray-300 leading-relaxed">
+                <p className="text-xs text-gray-300 leading-relaxed">
                   {step.description}
                 </p>
+
+                {/* EXPANDABLE DETAILS */}
+                <AnimatePresence initial={false}>
+                  {isExpanded && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                      animate={{ height: "auto", opacity: 1, marginTop: 12 }}
+                      exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="overflow-hidden border-t border-white/5 pt-3"
+                    >
+                      <p className="text-xs text-blue-400/90 leading-relaxed font-sans">
+                        {step.details}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
                 {/* Desktop Connecting Arrow */}
                 {index < 4 && (
