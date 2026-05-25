@@ -5,7 +5,7 @@ export const structuralInsight = {
   title: "Common Structural Design Mistakes in Residential Buildings",
   category: INSIGHT_CATEGORIES.MISTAKES,
   summary: "An analytical breakdown of structural design oversights in residential builds, detailing load path continuity failures and structural concrete joint behavior.",
-  image: "/images/projects/structurec.jpg",
+  image: "/images/projects/structurec.webp",
   readTime: "6 min read",
   date: "May 12, 2026",
   author: "D'JOE Engineering Advisory",

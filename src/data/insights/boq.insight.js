@@ -5,7 +5,7 @@ export const boqInsight = {
   title: "Why Accurate BOQs Prevent Cost Overruns in Construction",
   category: INSIGHT_CATEGORIES.BOQ,
   summary: "A detailed review of Bill of Quantities (BOQ) inaccuracies, explaining how standardized measurements protect budgets and minimize contractor disputes.",
-  image: "/images/projects/boqab.jpg",
+  image: "/images/projects/boqab.webp",
   readTime: "5 min read",
   date: "April 28, 2026",
   author: "D'JOE Cost Advisory",

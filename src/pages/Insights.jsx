@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "../components/animations/PageTransition";
@@ -60,18 +60,18 @@ export default function Insights() {
   ];
 
   // We set the first structural insight as the Featured Insight
-  const featuredInsight = insights.find(item => item.id === "structural-mistakes") || insights[0];
+  const featuredInsight = useMemo(() => insights.find(item => item.id === "structural-mistakes") || insights[0], []);
 
   // Filter insights based on selected category pill
-  const filteredInsights = insights.filter((item) => {
+  const filteredInsights = useMemo(() => insights.filter((item) => {
     if (activeCategory === "All") return true;
     return item.category === activeCategory;
-  });
+  }), [activeCategory]);
 
   // Exclude featured insight from the grid listing when in 'All' to avoid repeating content
-  const gridInsights = activeCategory === "All"
+  const gridInsights = useMemo(() => activeCategory === "All"
     ? filteredInsights.filter(item => item.id !== featuredInsight.id)
-    : filteredInsights;
+    : filteredInsights, [activeCategory, filteredInsights, featuredInsight]);
 
   return (
     <PageTransition>

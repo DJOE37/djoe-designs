@@ -11,22 +11,22 @@ export const hotelProject = {
   description: "Structural analysis, lateral wind calculation, and utility grid design for a multi-story commercial hotel framework.",
   category: "STRUCTURAL | ARCHITECTURAL | BOQ | CONSTRUCTION",
   primaryType: "STRUCTURAL",
-  image: "/images/projects/work.jpg",
+  image: "/images/projects/work.webp",
   structuralImages: [
-    "/images/projects/beam.jpg",
-    "/images/projects/structurec.jpg"
+    "/images/projects/beam.webp",
+    "/images/projects/structurec.webp"
   ],
   architecturalImages: [
-    "/images/projects/building.jpg",
-    "/images/projects/architecture.jpg"
+    "/images/projects/building.webp",
+    "/images/projects/architecture.webp"
   ],
   boqImages: [
-    "/images/projects/boq.jpg",
-    "/images/projects/boqab.jpg"
+    "/images/projects/boq.webp",
+    "/images/projects/boqab.webp"
   ],
   constructionImages: [
-    "/images/projects/work.jpg",
-    "/images/projects/foundation.jpg"
+    "/images/projects/work.webp",
+    "/images/projects/foundation.webp"
   ],
 
   metrics: {

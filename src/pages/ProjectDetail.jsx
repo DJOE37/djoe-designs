@@ -19,6 +19,7 @@ import { useProjectView } from "../hooks/useProjectView";
 import ProjectViewContent from "../components/projects/ProjectViewContent";
 import RelatedProjectLinks from "../components/projects/RelatedProjectLinks";
 import { generateWhatsAppLink } from "../data/contact";
+import Reveal from "../components/Reveal";
 
 export default function ProjectDetail() {
   const { id } = useParams();
@@ -57,7 +58,7 @@ export default function ProjectDetail() {
           </div>
 
           {/* CINEMATIC HERO COVER BANNER */}
-          <div className="relative h-[250px] md:h-[450px] rounded-3xl overflow-hidden border border-white/10 group">
+          <Reveal className="relative h-[250px] md:h-[450px] rounded-3xl overflow-hidden border border-white/10 group">
             <img 
               src={project.image} 
               alt={project.title} 
@@ -78,20 +79,20 @@ export default function ProjectDetail() {
                 </span>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* DESCRIPTION */}
-          <div className="text-left max-w-4xl">
+          <Reveal className="text-left max-w-4xl">
             <p className="text-gray-300 text-base md:text-lg leading-relaxed">
               {project.views[currentView]?.description || project.description}
             </p>
-          </div>
+          </Reveal>
 
           {/* DYNAMIC DISCIPLINE VIEW SYSTEM (STICKY SWITCHER & CONDITIONAL VIEW) */}
           <div className="space-y-12">
             {/* STICKY SEGMENTED CONTROL BAR */}
             <div className="sticky top-20 z-30 bg-[#0f0f0f]/90 backdrop-blur-md border-b border-white/10 py-4 -mx-6 px-6 sm:mx-0 sm:px-0">
-              <div className="max-w-4xl mx-auto flex justify-center">
+              <Reveal className="max-w-4xl mx-auto flex justify-center">
                 <div className="grid grid-cols-3 sm:flex bg-white/[0.02] border border-white/10 rounded-2xl sm:rounded-full p-1 w-full sm:w-auto gap-2 sm:gap-1">
                   {[
                     { key: "architectural", label: "Architectural Design", shortLabel: "Architectural" },
@@ -124,26 +125,26 @@ export default function ProjectDetail() {
                     );
                   })}
                 </div>
-              </div>
+              </Reveal>
             </div>
 
             {/* CONDITIONAL PERSPECTIVE CONTENT */}
-            <div className="max-w-5xl mx-auto">
+            <Reveal className="max-w-5xl mx-auto">
               <ProjectViewContent
                 project={project}
                 currentView={currentView}
                 setView={setView}
               />
-            </div>
+            </Reveal>
             
             {/* RELATED PROJECTS (FULL WIDTH UNDER CONTENT) */}
-            <div className="border-t border-white/10 pt-16 mt-8">
+            <Reveal className="border-t border-white/10 pt-16 mt-8">
               <RelatedProjectLinks currentId={project.id} currentTag={project.tag} />
-            </div>
+            </Reveal>
           </div>
 
           {/* FINAL CALL TO ACTION */}
-          <div className="text-center border-t border-white/10 pt-16 mt-8 max-w-3xl mx-auto space-y-6">
+          <Reveal className="text-center border-t border-white/10 pt-16 mt-8 max-w-3xl mx-auto space-y-6">
             <h3 className="text-2xl font-semibold text-white">
               Request Similar Project Sizing
             </h3>
@@ -162,7 +163,7 @@ export default function ProjectDetail() {
             >
               Discuss Your Project
             </a>
-          </div>
+          </Reveal>
 
         </div>
       </section>

@@ -13,19 +13,24 @@
  * -------------------------------------------------------------------
  */
 
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 // ========================
-// Pages
+// Pages (Static Imports)
 // ========================
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
-import ProjectDetail from "./pages/ProjectDetail";
-import InsightDetail from "./pages/InsightDetail";
 import Insights from "./pages/Insights";
 import About from "./pages/About";
 import Contact from "./components/sections/Contact";
+
+// ========================
+// Pages (Lazy Loaded)
+// ========================
+const ProjectDetail = React.lazy(() => import("./pages/ProjectDetail"));
+const InsightDetail = React.lazy(() => import("./pages/InsightDetail"));
 
 // ========================
 // Layout Components
@@ -48,21 +53,27 @@ export default function App() {
           AnimatePresence enables exit + enter animations 
           mode="wait" ensures smooth transition (one page exits before next enters)
         */}
-          <Routes>
+          <Suspense fallback={
+            <div className="min-h-[60vh] flex items-center justify-center text-gray-500 font-mono text-xs">
+              Loading...
+            </div>
+          }>
+            <Routes>
 
-            {/* ---------------- PRIMARY PAGES ---------------- */}
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/insights" element={<Insights />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+              {/* ---------------- PRIMARY PAGES ---------------- */}
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/insights" element={<Insights />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
 
-            {/* ---------------- DYNAMIC ROUTES ---------------- */}
-            <Route path="/projects/:id" element={<ProjectDetail />} />
-            <Route path="/insights/:id" element={<InsightDetail />} />
+              {/* ---------------- DYNAMIC ROUTES ---------------- */}
+              <Route path="/projects/:id" element={<ProjectDetail />} />
+              <Route path="/insights/:id" element={<InsightDetail />} />
 
-          </Routes>
+            </Routes>
+          </Suspense>
 
       </main>
 

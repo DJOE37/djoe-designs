@@ -11,22 +11,22 @@ export const duplexProject = {
   description: "Design of a load-bearing column frame and pad foundation mapping for a multi-family duplex residence.",
   category: "STRUCTURAL | ARCHITECTURAL | BOQ | CONSTRUCTION",
   primaryType: "STRUCTURAL",
-  image: "/images/projects/work5.jpg",
+  image: "/images/projects/work5.webp",
   structuralImages: [
-    "/images/projects/beam3.jpg",
-    "/images/projects/structure.jpg"
+    "/images/projects/beam3.webp",
+    "/images/projects/structure.webp"
   ],
   architecturalImages: [
-    "/images/projects/architecture.jpg",
-    "/images/projects/architecturea.jpg"
+    "/images/projects/architecture.webp",
+    "/images/projects/architecturea.webp"
   ],
   boqImages: [
-    "/images/projects/boq.jpg",
-    "/images/projects/boqa.jpg"
+    "/images/projects/boq.webp",
+    "/images/projects/boqa.webp"
   ],
   constructionImages: [
-    "/images/projects/work5.jpg",
-    "/images/projects/slab.jpg"
+    "/images/projects/work5.webp",
+    "/images/projects/slab.webp"
   ],
 
   metrics: {

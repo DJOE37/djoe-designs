@@ -11,22 +11,22 @@ export const bungalowProject = {
   description: "Structural design of a single-story slab-on-grade and continuous foundation strip footing for a modern bungalow.",
   category: "STRUCTURAL | ARCHITECTURAL | BOQ | CONSTRUCTION",
   primaryType: "STRUCTURAL",
-  image: "/images/projects/work4.jpg",
+  image: "/images/projects/work4.webp",
   structuralImages: [
-    "/images/projects/beam2.jpg",
-    "/images/projects/structureb.jpg"
+    "/images/projects/beam2.webp",
+    "/images/projects/structureb.webp"
   ],
   architecturalImages: [
-    "/images/projects/architectureb.jpg",
-    "/images/projects/work4.jpg"
+    "/images/projects/architectureb.webp",
+    "/images/projects/work4.webp"
   ],
   boqImages: [
-    "/images/projects/boqa.jpg",
-    "/images/projects/boqab.jpg"
+    "/images/projects/boqa.webp",
+    "/images/projects/boqab.webp"
   ],
   constructionImages: [
-    "/images/projects/raft.jpg",
-    "/images/projects/work2.jpg"
+    "/images/projects/raft.webp",
+    "/images/projects/work2.webp"
   ],
 
   metrics: {

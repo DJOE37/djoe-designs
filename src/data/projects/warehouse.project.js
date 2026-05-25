@@ -11,22 +11,22 @@ export const warehouseProject = {
   description: "Structural design, loading optimization, and stability analysis for a 2,500m² clear-span industrial steel warehouse facility.",
   category: "STRUCTURAL | ARCHITECTURAL | BOQ | CONSTRUCTION",
   primaryType: "STRUCTURAL",
-  image: "/images/projects/warehouse.jpg",
+  image: "/images/projects/warehouse.webp",
   structuralImages: [
-    "/images/projects/beam.jpg",
-    "/images/projects/structurec.jpg"
+    "/images/projects/beam.webp",
+    "/images/projects/structurec.webp"
   ],
   architecturalImages: [
-    "/images/projects/architecture.jpg",
-    "/images/projects/building.jpg"
+    "/images/projects/architecture.webp",
+    "/images/projects/building.webp"
   ],
   boqImages: [
-    "/images/projects/boq.jpg",
-    "/images/projects/boqab.jpg"
+    "/images/projects/boq.webp",
+    "/images/projects/boqab.webp"
   ],
   constructionImages: [
-    "/images/projects/slab.jpg",
-    "/images/projects/work2.jpg"
+    "/images/projects/slab.webp",
+    "/images/projects/work2.webp"
   ],
 
   metrics: {

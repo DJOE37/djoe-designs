@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import PageTransition from "../components/animations/PageTransition";
 import { insights } from "../data/insights/index";
 import { generateWhatsAppLink } from "../data/contact";
+import Reveal from "../components/Reveal";
 
 export default function InsightDetail() {
   const { id } = useParams();
@@ -63,7 +64,7 @@ export default function InsightDetail() {
           </div>
 
           {/* HERO BANNER WITH COVER IMAGE */}
-          <div className="relative h-[250px] md:h-[450px] rounded-3xl overflow-hidden border border-white/10 group mb-12">
+          <Reveal className="relative h-[250px] md:h-[450px] rounded-3xl overflow-hidden border border-white/10 group mb-12">
             <img 
               src={insight.image} 
               alt={insight.title} 
@@ -85,12 +86,12 @@ export default function InsightDetail() {
                 {insight.title}
               </h1>
             </div>
-          </div>
+          </Reveal>
 
           {/* ======================================================
               MAIN CONTENT & SIDEBAR TAKEAWAYS
           ====================================================== */}
-          <div className="grid lg:grid-cols-3 gap-12 text-left">
+          <Reveal className="grid lg:grid-cols-3 gap-12 text-left">
             {/* Structured Advisory Sections (left 2/3 cols) */}
             <div className="lg:col-span-2 space-y-10">
               <p className="text-gray-300 text-base md:text-lg leading-relaxed border-l-2 border-blue-500 pl-4 py-1 italic font-sans">
@@ -133,11 +134,11 @@ export default function InsightDetail() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
 
           {/* RELATED ADVISORY ARTICLES */}
           {relatedList.length > 0 && (
-            <div className="border-t border-white/10 pt-16 mt-16 space-y-8 text-left">
+            <Reveal className="border-t border-white/10 pt-16 mt-16 space-y-8 text-left">
               <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-500 font-mono">Related Advisory Analyses</h4>
               <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {relatedList.map((rel) => (
@@ -174,11 +175,11 @@ export default function InsightDetail() {
                   </Link>
                 ))}
               </div>
-            </div>
+            </Reveal>
           )}
 
           {/* ADVISORY CONSULTATION CTA */}
-          <div className="text-center border-t border-white/10 pt-16 mt-16 max-w-3xl mx-auto space-y-6">
+          <Reveal className="text-center border-t border-white/10 pt-16 mt-16 max-w-3xl mx-auto space-y-6">
             <h3 className="text-2xl font-semibold text-white">
               Get Professional Input
             </h3>
@@ -195,7 +196,7 @@ export default function InsightDetail() {
             >
               Request Advisory Consultation
             </a>
-          </div>
+          </Reveal>
 
         </div>
       </section>

@@ -16,29 +16,8 @@
  */
 
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { insights } from "../../data/insights";
-
-// ========================
-// ANIMATION CONFIG
-// ========================
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
+import Reveal from "../Reveal";
 
 // ========================
 // COMPONENT
@@ -51,21 +30,12 @@ export default function Insights() {
       {/* Subtle Blue System Tint */}
       <div className="absolute inset-0 bg-blue-500/[0.01] pointer-events-none" />
 
-      <motion.div
-        className="max-w-7xl mx-auto px-6 py-28 relative z-10"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
+      <div className="max-w-7xl mx-auto px-6 py-28 relative z-10">
 
         {/* ======================================================
             HEADER
         ====================================================== */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6"
-        >
+        <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between mb-20 gap-6">
 
           {/* TEXT */}
           <div className="max-w-xl">
@@ -98,15 +68,15 @@ export default function Insights() {
             View All Insights
           </Link>
 
-        </motion.div>
+        </Reveal>
 
         {/* ======================================================
             GRID
         ====================================================== */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <Reveal className="grid md:grid-cols-3 gap-8">
 
           {insights.map((item) => (
-            <motion.div key={item.id} variants={itemVariants}>
+            <div key={item.id}>
               <Link
                 to={`/insights/${item.id}`}
                 className="
@@ -145,12 +115,12 @@ export default function Insights() {
                 </span>
 
               </Link>
-            </motion.div>
+            </div>
           ))}
 
-        </div>
+        </Reveal>
 
-      </motion.div>
+      </div>
     </section>
   );
 }

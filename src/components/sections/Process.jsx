@@ -12,28 +12,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-// ========================
-// ANIMATION CONFIG
-// ========================
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 }
-  }
-};
+import Reveal from "../Reveal";
 
 // ========================
 // ENGINEERING PROCESS DATA
@@ -93,18 +72,12 @@ export default function Process() {
       {/* Subtle system tint (same as other sections) */}
       <div className="absolute inset-0 bg-blue-500/[0.01] pointer-events-none" />
 
-      <motion.div
-        className="max-w-7xl mx-auto px-6 py-28 relative z-10 text-left"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
+      <div className="max-w-7xl mx-auto px-6 py-28 relative z-10 text-left">
 
         {/* ======================================================
             HEADER BLOCK
         ====================================================== */}
-        <motion.div variants={itemVariants} className="max-w-2xl mb-20">
+        <Reveal className="max-w-2xl mb-20">
           <p className="text-blue-400 uppercase tracking-[0.25em] text-xs mb-4">
             Workflow
           </p>
@@ -117,12 +90,12 @@ export default function Process() {
             Every project follows a disciplined engineering process focused on
             clarity, technical accuracy, and real-world construction outcomes.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* ======================================================
             PROCESS GRID (NUMBERED SYSTEM)
         ====================================================== */}
-        <div className="relative pl-12 lg:pl-0 space-y-8 lg:space-y-0 lg:grid lg:grid-cols-5 lg:gap-6">
+        <Reveal className="relative pl-12 lg:pl-0 space-y-8 lg:space-y-0 lg:grid lg:grid-cols-5 lg:gap-6">
           {/* Mobile Vertical Connected Timeline Line */}
           <div className="absolute left-[24px] top-6 bottom-6 w-[1px] bg-gradient-to-b from-blue-500/10 via-blue-500/35 to-blue-500/10 lg:hidden pointer-events-none" />
 
@@ -137,9 +110,8 @@ export default function Process() {
             const isExpanded = !!expandedSteps[index];
 
             return (
-              <motion.div
+              <div
                 key={index}
-                variants={itemVariants}
                 onMouseEnter={() => setHoveredStep(index)}
                 onMouseLeave={() => setHoveredStep(null)}
                 onClick={() => toggleStep(index)}
@@ -209,12 +181,12 @@ export default function Process() {
                     <span className={`text-lg font-mono transition-all duration-500 ${isHovered ? "text-blue-400 translate-x-0.5" : "text-blue-500/30"}`}>→</span>
                   </div>
                 )}
-              </motion.div>
+              </div>
             );
           })}
-        </div>
+        </Reveal>
 
-      </motion.div>
+      </div>
     </section>
   );
 }

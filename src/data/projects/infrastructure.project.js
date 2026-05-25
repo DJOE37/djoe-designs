@@ -11,22 +11,22 @@ export const infrastructureProject = {
   description: "Structural design, soil-retaining calculations, and highway wheel load modeling for a 1.2-kilometer stormwater line.",
   category: "STRUCTURAL | ARCHITECTURAL | BOQ | CONSTRUCTION",
   primaryType: "BOQ",
-  image: "/images/projects/boq.jpg",
+  image: "/images/projects/boq.webp",
   structuralImages: [
-    "/images/projects/structure.jpg",
-    "/images/projects/structurea.jpg"
+    "/images/projects/structure.webp",
+    "/images/projects/structurea.webp"
   ],
   architecturalImages: [
-    "/images/projects/architectureb.jpg",
-    "/images/projects/work3.jpg"
+    "/images/projects/architectureb.webp",
+    "/images/projects/work3.webp"
   ],
   boqImages: [
-    "/images/projects/boqab.jpg",
-    "/images/projects/boqa.jpg"
+    "/images/projects/boqab.webp",
+    "/images/projects/boqa.webp"
   ],
   constructionImages: [
-    "/images/projects/foundation.jpg",
-    "/images/projects/work.jpg"
+    "/images/projects/foundation.webp",
+    "/images/projects/work.webp"
   ],
 
   metrics: {

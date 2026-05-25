@@ -5,7 +5,7 @@ export const architectureInsight = {
   title: "Balancing Architectural Vision with Structural Reality",
   category: INSIGHT_CATEGORIES.ARCHITECTURAL,
   summary: "Analyzing the collaboration between architectural form and structural efficiency, explaining how to deliver design intent without budget inflation.",
-  image: "/images/projects/architecture.jpg",
+  image: "/images/projects/architecture.webp",
   readTime: "7 min read",
   date: "June 05, 2026",
   author: "D'JOE Design Coordination",

@@ -5,18 +5,18 @@
  */
 
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { useMemo } from "react";
+import Reveal from "../Reveal";
 
 // ========================
 // IMAGE POOL
 // ========================
 const heroImages = [
-  "/images/projects/raft.jpg",
-  "/images/projects/work5.jpg",
-  "/images/projects/work4.jpg",
-  "/images/projects/work.jpg",
-  "/images/projects/warehouse.jpg",
+  "/images/projects/raft.webp",
+  "/images/projects/work5.webp",
+  "/images/projects/work4.webp",
+  "/images/projects/work.webp",
+  "/images/projects/warehouse.webp",
 ];
 
 // ========================
@@ -24,27 +24,6 @@ const heroImages = [
 // ========================
 const shuffleArray = (array) => {
   return [...array].sort(() => Math.random() - 0.5);
-};
-
-// ========================
-// ANIMATION
-// ========================
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.35,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.9 },
-  },
 };
 
 export default function Hero() {
@@ -176,31 +155,17 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-72 pb-24 sm:pt-[22rem] md:pt-[26rem] grid md:grid-cols-2 gap-16 items-end">
 
         {/* LEFT */}
-        <motion.div
-          className="max-w-xl text-left"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
+        <Reveal className="max-w-xl text-left">
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl md:text-5xl font-semibold leading-tight mb-6"
-          >
+          <h1 className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
             Engineering That Works on Site
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl"
-          >
+          <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
             We design buildings that are easier to build, safer to execute, and better coordinated before construction even starts.
-          </motion.p>
+          </p>
 
-          <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-2 gap-4 items-center w-full sm:flex sm:w-auto"
-          >
+          <div className="grid grid-cols-2 gap-4 items-center w-full sm:flex sm:w-auto">
             <Link
               to="/projects"
               className="
@@ -231,24 +196,16 @@ export default function Hero() {
             >
               Request Consultation
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-[10px] font-mono tracking-wider text-gray-500 mt-6"
-          >
+          <p className="text-[10px] font-mono tracking-wider text-gray-500 mt-6">
             Fewer site mistakes • Better cost control • Smoother construction
-          </motion.p>
+          </p>
 
-        </motion.div>
+        </Reveal>
 
         {/* RIGHT */}
-        <motion.div
-          className="relative text-left"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-        >
+        <Reveal className="relative text-left">
 
           <div className="
             bg-white/[0.025]
@@ -285,7 +242,7 @@ export default function Hero() {
 
           </div>
 
-        </motion.div>
+        </Reveal>
 
       </div>
     </section>

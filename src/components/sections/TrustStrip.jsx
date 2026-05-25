@@ -12,33 +12,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-// ========================
-// ANIMATION CONFIG
-// ========================
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
+import Reveal from "../Reveal";
 
 // ========================
 // PRINCIPLES & BELIEFS DATA
@@ -89,7 +63,7 @@ export default function TrustStrip() {
         {/* ========================
            SECTION INTRO
           ======================== */}
-        <div className="mb-14 max-w-2xl">
+        <Reveal className="mb-14 max-w-2xl">
           <p className="text-blue-400 uppercase tracking-[0.25em] text-xs mb-4">
             Our Core Principles
           </p>
@@ -99,24 +73,17 @@ export default function TrustStrip() {
           <p className="text-gray-300 leading-relaxed text-sm">
             We believe that engineering is more than calculations — it is a commitment to project predictability, client protection, and practical execution on site.
           </p>
-        </div>
+        </Reveal>
 
         {/* ========================
             TRUST GRID
         ======================== */}
-        <motion.div
-          className="grid md:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <Reveal className="grid md:grid-cols-3 gap-8">
           {trustItems.map((item, index) => {
             const isExpanded = !!expandedCards[index];
             return (
-              <motion.div
+              <div
                 key={index}
-                variants={itemVariants}
                 onClick={() => toggleCard(index)}
                 className="
                   bg-white/[0.025]
@@ -168,10 +135,10 @@ export default function TrustStrip() {
                     )}
                   </AnimatePresence>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </Reveal>
 
       </div>
     </section>

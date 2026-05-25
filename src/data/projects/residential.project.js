@@ -11,22 +11,22 @@ export const residentialProject = {
   description: "Reinforced concrete frame design, column grid transfers, and shallow strip footing design for a modern luxury villa.",
   category: "STRUCTURAL | ARCHITECTURAL | BOQ | CONSTRUCTION",
   primaryType: "ARCHITECTURAL",
-  image: "/images/projects/raft.jpg",
+  image: "/images/projects/raft.webp",
   structuralImages: [
-    "/images/projects/beam2.jpg",
-    "/images/projects/structureb.jpg"
+    "/images/projects/beam2.webp",
+    "/images/projects/structureb.webp"
   ],
   architecturalImages: [
-    "/images/projects/architecturea.jpg",
-    "/images/projects/work5.jpg"
+    "/images/projects/architecturea.webp",
+    "/images/projects/work5.webp"
   ],
   boqImages: [
-    "/images/projects/boqa.jpg",
-    "/images/projects/boq.jpg"
+    "/images/projects/boqa.webp",
+    "/images/projects/boq.webp"
   ],
   constructionImages: [
-    "/images/projects/raft.jpg",
-    "/images/projects/foundation.jpg"
+    "/images/projects/raft.webp",
+    "/images/projects/foundation.webp"
   ],
 
   metrics: {

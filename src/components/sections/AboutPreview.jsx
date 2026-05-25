@@ -4,30 +4,8 @@
  * -------------------------------------------------------------------
  */
 
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
-// ========================
-// ANIMATION CONFIG
-// ========================
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
+import Reveal from "../Reveal";
 
 // ========================
 // COMPONENT
@@ -41,21 +19,12 @@ export default function AboutPreview() {
       <div className="absolute inset-0 bg-blue-500/[0.01] pointer-events-none" />
 
       {/* MAIN GRID */}
-      <motion.div
-        className="max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-stretch relative z-10"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
+      <div className="max-w-7xl mx-auto px-6 py-28 grid md:grid-cols-2 gap-16 items-stretch relative z-10">
 
         {/* ======================================================
             LEFT SIDE (TEXT + CTA LOCKED BOTTOM)
         ====================================================== */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col h-full justify-between"
-        >
+        <Reveal className="flex flex-col h-full justify-between">
 
           {/* TOP CONTENT */}
           <div>
@@ -91,22 +60,28 @@ export default function AboutPreview() {
             </Link>
           </div>
 
-        </motion.div>
+        </Reveal>
 
         {/* ======================================================
             RIGHT SIDE (STACKED CARDS)
         ====================================================== */}
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col justify-between h-full"
-        >
+        <Reveal className="flex flex-col justify-between h-full">
 
           <div className="space-y-6">
             {[
-              "Structural Clarity",
-              "Cost Control",
-              "Buildability"
-            ].map((title, index) => (
+              {
+                title: "Structural Clarity",
+                desc: "Clear load paths designed to ensure structural safety and prevent settlement issues."
+              },
+              {
+                title: "Cost Control",
+                desc: "Optimized reinforcement parameters to prevent waste and keep the budget predictable."
+              },
+              {
+                title: "Buildability",
+                desc: "Coordinated details designed to align with actual site tools and ease contractor execution."
+              }
+            ].map((item, index) => (
               <div
                 key={index}
                 className="
@@ -115,18 +90,22 @@ export default function AboutPreview() {
                   rounded-2xl p-6
                   hover:border-blue-500/30
                   transition-all duration-300
+                  text-left
                 "
               >
-                <h3 className="text-base font-semibold text-white/90">
-                  {title}
+                <h3 className="text-base font-semibold text-white/90 mb-1">
+                  {item.title}
                 </h3>
+                <p className="text-xs text-gray-400 leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
 
-        </motion.div>
+        </Reveal>
 
-      </motion.div>
+      </div>
     </section>
   );
 }

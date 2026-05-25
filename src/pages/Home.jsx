@@ -22,7 +22,7 @@ export default function Home() {
         <div
           className="fixed inset-0 bg-cover bg-center opacity-[0.2] z-0 pointer-events-none"
           style={{
-            backgroundImage: "url('/images/structure-bg.jpg')",
+            backgroundImage: "url('/images/structure-bg.webp')",
           }}
         />
 

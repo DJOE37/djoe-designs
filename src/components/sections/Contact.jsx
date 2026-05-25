@@ -8,6 +8,7 @@
 
 import { Link } from "react-router-dom";
 import { generateWhatsAppLink } from "../../data/contact";
+import Reveal from "../Reveal";
 
 export default function Contact() {
   return (
@@ -35,7 +36,7 @@ export default function Contact() {
       <div className="absolute inset-0 bg-[#0b0b0b]/95 pointer-events-none" />
 
       {/* ================= CONTAINER ================= */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 py-28 text-center">
+      <Reveal className="relative z-10 max-w-5xl mx-auto px-6 py-28 text-center">
 
         {/* HEADLINE */}
         <h2 className="text-3xl md:text-4xl font-semibold leading-tight mb-6">
@@ -81,7 +82,7 @@ export default function Contact() {
 
         </div>
 
-      </div>
+      </Reveal>
     </section>
   );
 }

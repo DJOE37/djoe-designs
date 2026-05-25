@@ -13,32 +13,8 @@
 
 import { useMemo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { projects } from "../../data/projects";
-
-// ========================
-// ANIMATION CONFIG
-// ========================
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
-const MotionLink = motion(Link);
+import Reveal from "../Reveal";
 
 // ========================
 // FADING BACKGROUND COMPONENT
@@ -106,16 +82,10 @@ export default function ServicesSection() {
       {/* subtle engineering glow */}
       <div className="absolute inset-0 bg-blue-500/[0.01] pointer-events-none" />
 
-      <motion.div
-        className="max-w-7xl mx-auto px-6 py-28 relative z-10"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
+      <div className="max-w-7xl mx-auto px-6 py-28 relative z-10">
 
         {/* ================= HEADER ================= */}
-        <motion.div variants={itemVariants} className="max-w-2xl mb-16">
+        <Reveal className="max-w-2xl mb-16">
 
           <p className="text-blue-400 uppercase tracking-[0.25em] text-xs mb-4">
             Core Engineering Capabilities
@@ -131,15 +101,14 @@ export default function ServicesSection() {
             Structural systems, architectural intent, and BOQ intelligence integrated into a single execution-focused engineering framework.
           </p>
 
-        </motion.div>
+        </Reveal>
 
         {/* ================= GRID ================= */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <Reveal className="grid md:grid-cols-2 gap-8">
 
           {/* ================= STRUCTURAL ================= */}
-          <MotionLink
+          <Link
             to={showcaseProject ? `/projects/${showcaseProject.id}?view=structural` : "/projects"}
-            variants={itemVariants}
             className="
               relative overflow-hidden
               bg-white/[0.02]
@@ -176,12 +145,11 @@ export default function ServicesSection() {
                 We design safe structures that can be built efficiently and correctly.
               </p>
             </div>
-          </MotionLink>
+          </Link>
 
           {/* ================= ARCHITECTURE ================= */}
-          <MotionLink
+          <Link
             to={showcaseProject ? `/projects/${showcaseProject.id}?view=architectural` : "/projects"}
-            variants={itemVariants}
             className="
               relative overflow-hidden
               bg-white/[0.02]
@@ -216,12 +184,11 @@ export default function ServicesSection() {
                 We create functional spaces that balance appearance, comfort, and buildability.
               </p>
             </div>
-          </MotionLink>
+          </Link>
 
           {/* ================= BOQ & COST PLANNING ================= */}
-          <MotionLink
+          <Link
             to={showcaseProject ? `/projects/${showcaseProject.id}?view=boq` : "/projects"}
-            variants={itemVariants}
             className="
               relative overflow-hidden
               bg-white/[0.02]
@@ -256,12 +223,11 @@ export default function ServicesSection() {
                 We help clients avoid budget surprises through accurate material planning.
               </p>
             </div>
-          </MotionLink>
+          </Link>
 
           {/* ================= CONSTRUCTION SUPPORT ================= */}
-          <MotionLink
+          <Link
             to={showcaseProject ? `/projects/${showcaseProject.id}?view=construction` : "/projects"}
-            variants={itemVariants}
             className="
               relative overflow-hidden
               bg-white/[0.02]
@@ -296,11 +262,11 @@ export default function ServicesSection() {
                 We provide site guidance to keep construction aligned with the approved design.
               </p>
             </div>
-          </MotionLink>
+          </Link>
 
-        </div>
+        </Reveal>
 
-      </motion.div>
+      </div>
     </section>
   );
 }
